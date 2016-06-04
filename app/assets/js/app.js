@@ -2,7 +2,7 @@
 
 angular.module('spotippos',[ 'ui.router', 'ngCookies',
     'spotippos.config', 'spotippos.controllers','spotippos.directives','spotippos.filters','spotippos.services',
-    'spotippos.results'
+    'spotippos.results', 'spotippos.propertyFilter'
 ]);
 
 

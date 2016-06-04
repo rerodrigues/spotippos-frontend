@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		
+		<!-- App Icons -->
 		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/ico/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/ico/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-icon-72x72.png" />
@@ -24,7 +25,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/ico/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/ico/favicon-96x96.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/ico/favicon-16x16.png" />
-		<link rel="manifest" href="assets/img/ico/manifest.json" />
+		<link rel="manifest" href="manifest.json" />
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="msapplication-TileImage" content="assets/img/ico/ms-icon-144x144.png" />
 		<meta name="theme-color" content="#ffffff" />
@@ -32,6 +33,7 @@
 		<link rel="stylesheet" href="assets/css/spotippos.css" />
         
 		<!-- build:js /app/assets/js/vendor.min.js -->	
+		<script src="lib/jquery/jquery.js"></script>
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular/angular-cookies.js"></script>
 		<script src="lib/angular-ui-router/angular-ui-router.js"></script>
@@ -57,19 +59,25 @@
                     </nav>
 				</section>
 				
-                <section class="results_filter clearfix">
-                    <form class="filter_form">
-                         <fieldset>
-                             <legend>Filtro</legend>
-                             <ul>
-                                 <li><label>Id<input type="text" name="id" /></label></li>
-                                 <li><label>&Aacute;rea<input type="number" name="area" min="20" max="240" /></label></li>
-                                 <li><label>Quartos<input type="number" name="beds" min="1" max="5" /></label></li>
-                                 <li><label>Banheiros<input type="number" name="baths" min="1" max="4" /></label></li>
-                                 <li><label>Valor<input type="number" min="0" step="0.01" name="min-price" placeholder="M&iacute;nimo" /></label></li>
-                                 <li><label><input type="number" min="0" step="0.01" name="max-price" placeholder="M&aacute;ximo" /></label></li>
-                             </ul>
-                         </fieldset>
+                <section class="results_filter clearfix" ng-controller="propertyFilterController" ng-cloak>
+                    <form class="property_filters" name="propertyFilters" delegate-event="change,input,updateFilters" novalidate>
+						<fieldset>
+							<legend>Filtro</legend>
+							<ul>
+								<li><label>Id
+									<input type="text"   name="id" ng-model="id" autocomplete="off" /></label></li>
+								<li><label>&Aacute;rea
+									<input type="number" name="square-meters" min="20" max="240" ng-model="squareMeters" ng-min="20" ng-max="240"/></label></li>
+								<li><label>Quartos
+									<input type="number" name="beds" min="1" max="5" ng-model="beds" /></label></li>
+								<li><label>Banheiros
+									<input type="number" name="baths" min="1" max="4" ng-model="baths" /></label></li>
+								<li><label>Valor
+									<input type="number" name="min-price" min="0" placeholder="M&iacute;nimo" ng-model="minPrice" /></label></li>
+								<li><label>
+									<input type="number" name="max-price" min="1" placeholder="M&aacute;ximo" ng-model="maxPrice" /></label></li>
+							</ul>
+						</fieldset>
                     </form>
                 </section>
                     
@@ -111,5 +119,11 @@
 	<script src="modules/results/js/filters.js"></script>
 	<script src="modules/results/js/directives.js"></script>
 	<script src="modules/results/js/services.js"></script>
+	
+	<script src="modules/property-filter/propertyFilterModule.js"></script>
+	<script src="modules/property-filter/js/controllers.js"></script>
+	<script src="modules/property-filter/js/filters.js"></script>
+	<script src="modules/property-filter/js/directives.js"></script>
+	<script src="modules/property-filter/js/services.js"></script>
 	<!-- endbuild -->
 </html>
