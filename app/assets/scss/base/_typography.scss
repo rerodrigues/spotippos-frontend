@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,300);
+
+$fonts-url: 'http://www.netcombo.com.br/cs/NET/fonts';
+
+@font-face {
+    font-family: 'FuturaStd-Medium';
+    src: url(#{$fonts-url}/futurastdmedium/futurastdmedium.eot);
+    src: local('FuturaStd-Medium'),
+         url(#{$fonts-url}/futurastdmedium/futurastdmedium.eot?#iefix) format('embedded-opentype'),
+         url(#{$fonts-url}/futurastdmedium/futurastdmedium.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaStd-Bold';
+    src: url(#{$fonts-url}/futurastdbold/futurastdbold.eot);
+    src: local('FuturaStd-Bold'),
+         url(#{$fonts-url}/futurastdbold/futurastdbold.eot?#iefix) format('embedded-opentype'),
+         url(#{$fonts-url}/futurastdbold/futurastdbold.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaStd-Light';
+    src: url(#{$fonts-url}/futurastdlight/futurastdlight.eot);
+    src: local('FuturaStd-Light'),
+         url(#{$fonts-url}/futurastdlight/futurastdlight.eot?#iefix) format('embedded-opentype'),
+         url(#{$fonts-url}/futurastdlight/futurastdlight.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font: 100%/1.5 'Roboto';
+
+    input {
+      font-family: inherit;
+
+      &::-webkit-input-placeholder { color: #d8d8d8; }
+      &:-moz-placeholder { color: #d8d8d8; }
+      &::-moz-placeholder { color: #d8d8d8; }
+      &:-ms-input-placeholder { color: #d8d8d8; }
+    }
+}

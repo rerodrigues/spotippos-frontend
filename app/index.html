@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br" ng-app="spotippos">
+	<head>
+		<meta charset="utf-8" />
+		<base href="/app/" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		
+		<title>Spotippos - An&uacute;ncios</title>
+		<meta name="description" content="Encontre seu im&oacute;vel em Spottipos atrav&eacute;s de uma rica experi&ecirc;ncia, utilizando diversos filtros para refinar os resultados" />
+		
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/ico/apple-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/ico/apple-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/ico/apple-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/ico/apple-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/ico/apple-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/ico/apple-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/ico/apple-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/ico/apple-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/img/ico/android-icon-192x192.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/ico/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/ico/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/ico/favicon-16x16.png" />
+		<link rel="manifest" href="assets/img/ico/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="assets/img/ico/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		
+		<link rel="stylesheet" href="assets/css/spotippos.css" />
+        
+		<!-- build:js /app/assets/js/vendor.min.js -->	
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-cookies.js"></script>
+		<script src="lib/angular-ui-router/angular-ui-router.js"></script>
+		<!-- endbuild -->
+	</head>
+	
+	<body>
+		<div class="main-wrap">
+			<header class="site-header clearfix">
+                <div class="logo">
+                    <a href="#">Spotippos</a>
+                </div>
+				<h1 class="title">Spotippos - An&uacute;ncios</h1>
+			</header>
+			
+			<main class="site-main clearfix">
+				<section class="sidebar clearfix">
+                    <nav clas="sidebar_links">
+                        <ul>
+                          <li class="sidebar_link anuncios"><a href="#">Anúncios</a></li>
+                          <li class="sidebar_link adicionar"><a href="#">Novo anúncio</a></li>
+                        </ul>
+                    </nav>
+				</section>
+				
+                <section class="results_filter clearfix">
+                    <form class="filter_form">
+                         <fieldset>
+                             <legend>Filtro</legend>
+                             <ul>
+                                 <li><label>Id<input type="text" name="id" /></label></li>
+                                 <li><label>&Aacute;rea<input type="number" name="area" min="20" max="240" /></label></li>
+                                 <li><label>Quartos<input type="number" name="beds" min="1" max="5" /></label></li>
+                                 <li><label>Banheiros<input type="number" name="baths" min="1" max="4" /></label></li>
+                                 <li><label>Valor<input type="number" min="0" step="0.01" name="min-price" placeholder="M&iacute;nimo" /></label></li>
+                                 <li><label><input type="number" min="0" step="0.01" name="max-price" placeholder="M&aacute;ximo" /></label></li>
+                             </ul>
+                         </fieldset>
+                    </form>
+                </section>
+                    
+                <section class="results_list clearfix">
+                    <section class="results_property clearfix" ng-repeat="n in [].constructor(3) track by $index">
+                        <div class="property_photo">
+                            <img src="http://lorempixel.com/298/224/city/{{$index+1}}" />
+                            <!--<img src="http://loremflickr.com/298/224/living,room/all" />-->
+                            <span>R$ 595.000</span>
+                        </div>
+                        <dl class="property_details">
+                            <dt>ID {{$index}}234</dt>
+                            <dd class="property_title">Imóvel código 1234, com 2 quartos e 2 banheiros.</dd>
+                            <dd class="property_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id est dapibus, finibus lorem sed, fermentum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque eget dictum metus, vitae facilisis erat. Pellentesque nisi urna, ultricies sit amet magna ac, pulvinar consequat augue. Nunc sit…</dd>
+                            <dd class="property_features clearfix">
+                                <ul>
+                                    <li class="m2">73 M&sup2;</sup></li>
+                                    <li class="beds">2 Quartos</li>
+                                    <li class="baths">2 Banheiros</li>
+                                </ul>
+                                <button>Visualizar anúncio</button>
+                            </dd>
+                        </dl>
+                    </section>
+                </section>
+                
+			</main>
+		</div>
+	</body>
+
+	<!-- build:js /app/assets/js/app.min.js -->	
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/controllers.js"></script>
+	<script src="assets/js/directives.js"></script>
+	<script src="assets/js/filters.js"></script>
+	<script src="assets/js/services.js"></script>
+	
+	<script src="modules/results/resultsModule.js"></script>
+	<script src="modules/results/js/controllers.js"></script>
+	<script src="modules/results/js/filters.js"></script>
+	<script src="modules/results/js/directives.js"></script>
+	<script src="modules/results/js/services.js"></script>
+	<!-- endbuild -->
+</html>

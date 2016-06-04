@@ -1,0 +1,12 @@
+/* clearfix - http://www.webtoolkit.info/css-clearfix.html */
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.clearfix{display:block}html[xmlns] .clearfix{display:block}* html .clearfix{height:1%}
+
+/* util classes */
+.ir{display:block;font-size:1px;text-indent:-9000px;}
+.show{display:block;}
+.hide{display:none;}
+.hidden{visibility:hidden;}
+.selfix{vertical-align: 0 !important;vertical-align: -2px;}
+.radfix{width:14px !important;height:14px !important;border:none !important;background:none !important;padding:0 !important;margin:0 !important;}
+.no-select{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.inherit{color:inherit;text-decoration:inherit;line-height:inherit;font-weight:inherit;width:inherit;height:inherit;display:inherit;}

@@ -1,0 +1,32 @@
+.sidebar {
+    width: 107px;
+    margin-bottom: 16px;
+    background-color: $twilight-blue;
+    flex: none;
+    
+    ul {
+        margin: 15px 8px;
+        
+        & > li {
+            border-radius: 4px;
+            margin-bottom: 8px;
+                
+            &:hover { background-color: $azure; }
+            
+            a {
+                width: 91px;
+                height: 72px;
+                display: block;
+                padding-top: 52px;
+                font: 700 11px 'Roboto Condensed';
+                color: $white;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            
+            &.anuncios a { background: url(../img/png/building.png) no-repeat center 7px }
+            &.adicionar a { background: url(../img/png/plus-icon.png) no-repeat center 15px}
+        }
+    }
+}

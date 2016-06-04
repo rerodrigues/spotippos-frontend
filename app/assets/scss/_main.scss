@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+	margin: 0px;
+}
+
+.main-wrap {
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+}
+    .site-header {
+        height: 60px;
+        background-color: $water-blue;
+        
+        .logo {
+            width: 107px;
+            height: 60px;
+            float: left;
+            background-color: $azure;
+            /*display: none;*/
+            a {
+                @include replace-text-with-dimensions('assets/img/png/logo-vivareal.png');
+                display: block;
+                margin: 10px auto;
+            }
+        }
+        
+        .title {
+            font: 700 24px/60px 'Roboto Condensed';
+            color: $white;
+            text-transform: uppercase;
+            float: left;
+            padding-left: 30px;
+        }
+    }
+    
+    .site-main {
+        display: flex;
+        background-color: $bg-gray;
+    }
