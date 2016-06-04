@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spotippos.propertyFilter.controllers',[])
-    .controller('propertyFilterController',['$scope', '$rootScope', function($scope, $rootScope){
+    .controller('propertyFilterController',['$scope', '$rootScope', 'currencyToIntegerFilter', function($scope, $rootScope, currencyToIntegerFilter){
     
         $scope.updateFilters = function(evt){
             
@@ -10,8 +10,8 @@ angular.module('spotippos.propertyFilter.controllers',[])
                 squareMeters : $scope.squareMeters,
                 beds : $scope.beds,
                 baths : $scope.baths,
-                minPrice : $scope.minPrice,
-                maxPrice : $scope.maxPrice
+                minPrice : currencyToIntegerFilter($scope.minPrice),
+                maxPrice : currencyToIntegerFilter($scope.maxPrice)
             };
             
             $rootScope.$broadcast('filtersChanged', filters);
