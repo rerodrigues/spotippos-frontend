@@ -8,11 +8,11 @@ angular.module('spotippos',[ 'ui.router', 'ngCookies',
 
 angular.module('spotippos.config',[])
     .constant('version','1.0')
-    .constant('PARSE_APP_ID','R8jG6ChCSOGxvB4UWjcMMlEMuloVjoVLo4mS2xkD')
-    .constant('PARSE_API_KEY','8GjcnO3gOdaIE41Nl9Y2juLEQgiNvHVdUM1aZoxF')
     
+    /* BUILD:LOCAL */ .constant('PROPERTIES_URL', '/_mock/properties_4.json')
     /* BUILD:LOCAL */ .constant('HTTP_CACHE_ENABLED', false);
     
+    /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties') */
     /* BUILD:ALL .constant('HTTP_CACHE_ENABLED', true); */
     
 angular.module('spotippos')

@@ -1,6 +1,8 @@
 {
   "strict": "global",
   "latedef": true,
+  "browser": true,
+  "devel": true,
   "globals": {
     // Node
     "require": false,
@@ -24,5 +26,6 @@
     "browser": false,
     "element": false,
     "by": false
+	
   }
 }

@@ -73,22 +73,21 @@
                     </form>
                 </section>
                     
-                <section class="results_list clearfix">
-                    <section class="results_property clearfix" ng-repeat="n in [].constructor(3) track by $index">
+                <section class="results_list clearfix" ng-controller="resultsController" ng-cloak>
+                    <section class="results_property clearfix" ng-repeat="property in properties | orderBy : 'price' track by property.id ">
                         <div class="property_photo">
-                            <img src="http://lorempixel.com/298/224/city/{{$index+1}}" />
-                            <!--<img src="http://loremflickr.com/298/224/living,room/all" />-->
-                            <span>R$ 595.000</span>
+                            <img ng-src="{{ property.picture }}" />
+                            <span>{{ property.price | currency : 'R$ ' }}</span>
                         </div>
                         <dl class="property_details">
-                            <dt>ID {{$index}}234</dt>
-                            <dd class="property_title">Imóvel código 1234, com 2 quartos e 2 banheiros.</dd>
-                            <dd class="property_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id est dapibus, finibus lorem sed, fermentum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque eget dictum metus, vitae facilisis erat. Pellentesque nisi urna, ultricies sit amet magna ac, pulvinar consequat augue. Nunc sit…</dd>
+                            <dt>ID {{ property.id }}</dt>
+                            <dd class="property_title">{{ property.title }}</dd>
+                            <dd class="property_description">{{ property.description }}</dd>
                             <dd class="property_features clearfix">
                                 <ul>
-                                    <li class="m2">73 M&sup2;</sup></li>
-                                    <li class="beds">2 Quartos</li>
-                                    <li class="baths">2 Banheiros</li>
+                                    <li class="m2">{{ property.squareMeters }} M&sup2;</sup></li>
+                                    <li class="beds">{{ property.beds }} Quartos</li>
+                                    <li class="baths">{{ property.baths }} Banheiros</li>
                                 </ul>
                                 <button>Visualizar anúncio</button>
                             </dd>
