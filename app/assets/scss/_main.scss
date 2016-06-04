@@ -18,7 +18,6 @@ html, body {
             height: 60px;
             float: left;
             background-color: $azure;
-            /*display: none;*/
             a {
                 @include replace-text-with-dimensions('assets/img/png/logo-vivareal.png');
                 display: block;

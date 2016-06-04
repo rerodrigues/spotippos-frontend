@@ -23,6 +23,8 @@
             height: 228px;
             position: relative;
             flex: none;
+            background: $medium-gray url(../img/svg/logo-vivareal.svg) no-repeat center 40px/50%;
+            color: $brownish-grey;
             
             img {
                 max-width: 298px;
@@ -31,6 +33,7 @@
             & > span {
                 font: 600 23px/1.4 'Open Sans';
                 color: $white;
+                text-shadow:0px 1px 0px #333333;
                 position: absolute;
                 bottom: 14px;
                 left: 12px;
