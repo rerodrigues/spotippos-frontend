@@ -85,7 +85,7 @@
                     <section class="results_property clearfix" ng-repeat="property in properties | orderBy : 'price' track by property.id ">
                         <div class="property_photo">
                             <img ng-src="{{ property.picture }}" />
-                            <span>{{ property.price | currency : 'R$ ' }}</span>
+                            <span>{{ property.price | currency : 'R$ ' : 0 }}</span>
                         </div>
                         <dl class="property_details">
                             <dt>ID {{ property.id }}</dt>

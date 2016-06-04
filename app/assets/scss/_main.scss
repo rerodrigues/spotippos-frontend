@@ -21,7 +21,7 @@ html, body {
             a {
                 @include replace-text-with-dimensions('assets/img/png/logo-vivareal.png');
                 display: block;
-                margin: 10px auto;
+                margin: 11px auto;
             }
         }
         
