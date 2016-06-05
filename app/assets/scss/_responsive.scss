@@ -48,6 +48,61 @@
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
         .site-header .logo { background: #AAA }
+        
+        .site-main { flex-flow: column; }
+        
+        .sidebar {
+            width: 100%;
+            margin: 0;
+            
+            ul {
+                margin : 8px;
+                
+                & > li {
+                    display: inline-block;
+                    margin-bottom: 0;
+                    margin-right: 8px;
+                    border-radius: 2px;
+                    
+                    a {
+                        width: auto;
+                        height: 52px;
+                        padding: 2px 12px 0 0;
+                        font-size: 14px;
+                        line-height: 52px;
+                    }
+                    
+                    &.anuncios a, &.adicionar a { background-position: 12px center; background-size: 24px; padding-left: 48px; }
+                    
+                }
+            }
+        }
+        
+        
+        .results_filter {
+            width: auto;
+            margin: 0;
+            padding: 8px 12px;
+        }
+        
+        .property_filters ul li {
+            width: 16.66%;
+            padding: 0px 10px 6px 0;
+            border: none;
+            
+            &:nth-child(even) {
+                padding-right: 10px;
+                padding-left: 0;
+            }
+            
+            label { font-size: 11px; }
+            input { padding: 6px; }
+        }
+        
+        .results_list {
+            margin: 0;
+            margin-top: 8px;
+        }
     }
 
     /* Extra Small Devices, Phones */ 
