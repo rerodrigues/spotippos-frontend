@@ -3,6 +3,6 @@
 angular.module('spotippos.filters',[])
     .filter('currencyToInteger', function(){
         return function(input) {
-            return input !== undefined ? Number(input.toString().replace(/[.,]\d{2}$|[.,]|([^\d])/g,"")) : undefined;
+            return input !== undefined && input !== null ? Number(input.toString().replace(/[.,]\d{2}$|[.,]|([^\d])/g,"")) : null;
         };
     });

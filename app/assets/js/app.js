@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spotippos',[ 'ui.router', 'ngCookies',
+angular.module('spotippos',[ 'ui.router', 'infinite-scroll',
     'spotippos.config', 'spotippos.controllers','spotippos.directives','spotippos.filters','spotippos.services',
     'spotippos.results', 'spotippos.propertyFilter'
 ]);
@@ -8,8 +8,9 @@ angular.module('spotippos',[ 'ui.router', 'ngCookies',
 
 angular.module('spotippos.config',[])
     .constant('version','1.0')
+    .constant('SPOTIPPOS_BOUNDS', { ax: 0, ay: 0, bx: 1000, by: 1400 })
     
-    /* BUILD:LOCAL */ .constant('PROPERTIES_URL', '/_mock/properties_4.json')
+    /* BUILD:LOCAL */ .constant('PROPERTIES_URL', '/_mock/properties_21.json')
     /* BUILD:LOCAL */ .constant('HTTP_CACHE_ENABLED', false);
     
     /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties') */

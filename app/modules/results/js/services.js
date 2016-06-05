@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('spotippos.results.services', [])
-    .factory('resultsService',['$http','$q', 'PROPERTIES_URL', function($http, $q, PROPERTIES_URL){
+    .factory('resultsService',['$http','$q', 'PROPERTIES_URL', 'SPOTIPPOS_BOUNDS', function($http, $q, PROPERTIES_URL, SPOTIPPOS_BOUNDS){
         
         return {
-            filterPropertiesInBounds : function(bounds, limit, filters) {
+            getPropertiesInBounds : function(bounds) {
+                bounds = bounds || SPOTIPPOS_BOUNDS;
                 
                 return $http({
                     method  : 'GET',
@@ -12,19 +13,6 @@ angular.module('spotippos.results.services', [])
                     params  : bounds
                 }).then(function(response){
                     var properties = response.data.properties;
-                    
-                    if(filters) {
-                        properties = properties.filter(function(property){
-                            return  (!filters.id || property.id == filters.id) &&
-                                    (!filters.squareMeters || property.squareMeters == filters.squareMeters) &&
-                                    (!filters.beds || property.beds == filters.beds) &&
-                                    (!filters.baths || property.baths == filters.baths)&&
-                                    (!filters.minPrice || property.price >= filters.minPrice) &&
-                                    (!filters.maxPrice || property.price <= filters.maxPrice);
-                        });
-                    }
-                    
-                    properties = properties.slice(0,limit);
                     
                     //Normalize some attributes in the properties
                     properties.map(function(property){
@@ -36,6 +24,8 @@ angular.module('spotippos.results.services', [])
                         property.picture = 'http://loremflickr.com/298/224/home,living,room/all/?' + property.id;
                         return property;
                     });
+                    
+                    properties.sort(function(a,b){ return a.price - b.price; });
                     
                     return $q.resolve(properties);
                 
