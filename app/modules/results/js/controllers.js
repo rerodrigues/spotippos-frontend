@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('spotippos.results.controllers',[])
-    .controller('resultsController',['$scope','$q', 'resultsService', 'matchCriteriaFilter', function($scope, $q, resultsService, matchCriteriaFilter){
+    .controller('resultsController',['$rootScope', '$scope', '$q', '$stateParams', 'resultsService', '$filter',
+        function($rootScope, $scope, $q, $stateParams, resultsService, $filter){
+        
         $scope.properties = [];
+        
+        angular.extend($scope, { filters : $filter('compactObj')($stateParams) } );
         
         var allProperties = [],
             filteredProperties = [],
@@ -11,13 +15,13 @@ angular.module('spotippos.results.controllers',[])
             
         
         var filterProperties = function(filters) {
-            return $q.resolve(filteredProperties = matchCriteriaFilter(allProperties, filters));
+            return $q.resolve(filteredProperties =  $filter('matchCriteria')(allProperties, filters));
         };
         
         var fetchAllProperties = function(bounds) {
             resultsService.getPropertiesInBounds(bounds).then(function(data){
                 allProperties = data;
-                filterProperties({}).then(function(){
+                filterProperties($scope.filters).then(function(){
                     $scope.getResults();
                 });
             });
@@ -30,12 +34,14 @@ angular.module('spotippos.results.controllers',[])
             $scope.endReached = offset >= filteredProperties.length;
         };
         
-        $scope.$on('filtersChanged', function(evt, filters){     
-            $scope.properties = [];
-            offset = 0;
-            filterProperties(filters).then(function(){
-                $scope.getResults();
-            });
+        $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams){
+            if(toState.name === 'results.filtered') {
+                $scope.properties = [];
+                offset = 0;
+                filterProperties(toParams).then(function(){
+                    $scope.getResults();
+                });
+            }
         });
         
         fetchAllProperties();

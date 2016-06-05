@@ -21,25 +21,24 @@ angular.module('spotippos')
         '$httpProvider', 'HTTP_CACHE_ENABLED',
         function($httpProvider, HTTP_CACHE_ENABLED){
             $httpProvider.defaults.cache = HTTP_CACHE_ENABLED;
-    }]);
-    
-    /*
+    }])
     .config([
         '$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider){
             $stateProvider
-            .state('index', {
-                url: "/",
-            })
             .state('results', {
                 url: "/results",
                 controller:'resultsController',
-                templateUrl:'modules/results/views/results.html',
+                templateUrl:'modules/results/views/_results.html',
+            }).state('results.filtered', {
+                url: "/filters?{id:int}&{squareMeters:int}&{beds:int}&{baths:int}&{minPrice:int}&{maxPrice:int}",
             });
-            
-            $urlRouterProvider.otherwise('/');
+    
+            $urlRouterProvider.otherwise('/results');
             $locationProvider.html5Mode(false);
-    }])
+    }]);
+    
+    /*
     .config(['$cookiesProvider', function($cookiesProvider){
         var expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + 30);
