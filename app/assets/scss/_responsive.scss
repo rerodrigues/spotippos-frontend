@@ -108,6 +108,56 @@
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
         .site-header .logo { background: #777 }
+        
+        body input {
+            &::-webkit-input-placeholder { font-size: 11px; }
+            &:-moz-placeholder { font-size: 11px; }
+            &::-moz-placeholder { font-size: 11px; }
+            &:-ms-input-placeholder { font-size: 11px; }
+        }
+        
+        .property_filters ul li {
+            padding: 0px 6px 6px 0;
+            &:nth-child(even) {
+                padding-right: 6px;
+            }
+            
+            input {
+                padding : 4px 3px;
+                font-size: 11px;
+            }
+        }
+        
+        .results_property {
+            flex-flow: column;
+            height: auto;
+            
+            .property_photo {
+                width: auto;
+                img {
+                    margin: 0 auto;
+                    display: block;
+                    height: 224px;
+                    max-width : none;
+                }
+                & > span {
+                    position: static;
+                    display: block;
+                    width: 298px;
+                    margin: 0 auto;
+                    transform: translateY(-100%);
+                }
+            }
+        }
+        
+        .property_details {
+            dd.property_features { padding: 0 17px; }
+            dd.property_description {
+                height: auto;
+                max-height: 84px;
+            }
+        }
+        
     }
 
     /* Custom, iPhone Retina */ 
