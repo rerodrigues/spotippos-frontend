@@ -52,5 +52,10 @@ body {
         display: flex;
         background-color: $bg-gray;
         clear: both;
+        
+        .sidebar { flex: none; }
+        .site-content { flex: 1; }
+        .site-content_results {
+            display: flex;
+        }
     }
-
