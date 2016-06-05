@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spotippos',[ 'ui.router', 'infinite-scroll',
+angular.module('spotippos',[ 'ngAnimate', 'ui.router', 'infinite-scroll',
     'spotippos.config', 'spotippos.controllers','spotippos.directives','spotippos.filters','spotippos.services',
     'spotippos.results', 'spotippos.propertyFilter'
 ]);

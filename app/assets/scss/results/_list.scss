@@ -9,7 +9,6 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
 }
 
-
     .results_property {
         display: flex;
         height: 224px;
@@ -18,6 +17,11 @@
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
         margin-bottom: 18px;
         &:last-child { margin-bottom: 0 }
+        &.ng-enter {
+            transition: 2s linear all;
+            opacity: 0;
+        }
+        &.ng-enter.ng-enter-active { opacity: 1; }
         
         .property_photo {
             width: 298px;
@@ -44,82 +48,82 @@
         }
     }
     
-        .property_details {
-            min-width: 390px;
-            margin-top: 8px;
+    .property_details {
+        min-width: 390px;
+        margin-top: 8px;
+        
+        dt {
+            margin-left: 17px;
+            font: 700 13px/1.2 'Roboto Condensed';
+            color: $warm-grey-three;
             
-            dt {
-                margin-left: 17px;
-                font: 700 13px/1.2 'Roboto Condensed';
+            border-radius: 2px;
+            background-color: $white;
+            border: solid 1px #e5e5e5;
+            display: inline;
+            padding: 0 6px;
+        }
+        dd {
+            margin: 0 17px;
+            
+            &.property_title {
+                font: 700 18px/1.5 'Roboto Condensed';
+                color: $greyish-brown;
+                margin-top: 7px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                height: 1.5em;
+            }
+            
+            &.property_description {
+                font: 13px/1.6 'Roboto Condensed';
                 color: $warm-grey-three;
-                
-                border-radius: 2px;
-                background-color: $white;
-                border: solid 1px #e5e5e5;
-                display: inline;
-                padding: 0 6px;
+                height: 84px;
+                overflow: hidden;
+                margin-top: 4px;
+                margin-bottom: 20px;
             }
-            dd {
-                margin: 0 17px;
+            
+            &.property_features {
+                height: 50px;
+                margin: 0;
+                padding: 0 4px 0 17px;
+                background-color: $light-gray;
+                box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
                 
-                &.property_title {
-                    font: 700 18px/1.5 'Roboto Condensed';
-                    color: $greyish-brown;
-                    margin-top: 7px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    height: 1.5em;
+                ul {
+                  float: left;  
                 }
-                
-                &.property_description {
-                    font: 13px/1.6 'Roboto Condensed';
-                    color: $warm-grey-three;
-                    height: 84px;
-                    overflow: hidden;
-                    margin-top: 4px;
-                    margin-bottom: 20px;
-                }
-                
-                &.property_features {
+                li {
+                    display: inline-block;
                     height: 50px;
-                    margin: 0;
-                    padding: 0 4px 0 17px;
-                    background-color: $light-gray;
-                    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+                    padding-top: 30px;
+                    font: 700 13px 'Roboto Condensed';
+                    color: $warm-grey;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-right: 11px;
+                    &:last-child { margin-right: 0px; }
                     
-                    ul {
-                      float: left;  
-                    }
-                    li {
-                        display: inline-block;
-                        height: 50px;
-                        padding-top: 30px;
-                        font: 700 13px 'Roboto Condensed';
-                        color: $warm-grey;
-                        text-align: center;
-                        text-transform: uppercase;
-                        margin-right: 11px;
-                        &:last-child { margin-right: 0px; }
-                        
-                        &.m2    { background: url(../img/svg/ic-card-area.svg) no-repeat center 10px }
-                        &.beds  { background: url(../img/svg/ic-card-beds.svg) no-repeat center 10px}
-                        &.baths { background: url(../img/svg/ic-card-bathroom.svg) no-repeat center 10px}
-                    }
-                    button {
-                        float: right;
-                        width: 144px;
-                        height: 32px;
-                        font: 700 14px/1.1 'Roboto Condensed';
-                        color: $white;
-                        text-transform: uppercase;
-                        border-radius: 2px;
-                        background-color: $azure;
-                        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
-                        border: none;
-                        margin-top: 10px;
-                        cursor: pointer;
-                    }
+                    &.m2    { background: url(../img/svg/ic-card-area.svg) no-repeat center 10px }
+                    &.beds  { background: url(../img/svg/ic-card-beds.svg) no-repeat center 10px}
+                    &.baths { background: url(../img/svg/ic-card-bathroom.svg) no-repeat center 10px}
+                }
+                button {
+                    float: right;
+                    width: 144px;
+                    height: 32px;
+                    font: 700 14px/1.1 'Roboto Condensed';
+                    color: $white;
+                    text-transform: uppercase;
+                    border-radius: 2px;
+                    background-color: $azure;
+                    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+                    border: none;
+                    margin-top: 10px;
+                    cursor: pointer;
                 }
             }
+        }
         
     }
