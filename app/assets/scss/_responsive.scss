@@ -1,0 +1,61 @@
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+        .site-header .logo { background: #FFF }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width: 769px) and (max-width : 992px) {
+        .site-header {
+            .logo { background: #DDD }
+            .title { padding-left: 17px; }
+        }
+        .site-header .logo { width : 90px; }
+        .sidebar { width : 90px; }
+        
+        .sidebar ul > li a { width: 74px; font-size: 10px; }
+        
+        .results_filter {
+            width: 200px; margin: 16px 12px;
+            ul li input {
+                padding : 6px;
+            }
+        }
+        .results_list { padding-left: 15px; padding-right: 15px; }
+        .results_property {
+            height: 210px;
+            
+            .property_photo {
+                width: 278px; height: 210px;
+                & img { width: 278px; height: 210px; }
+            }
+        }
+        .property_details {
+            margin-top : 0;
+            min-width: 340px;
+            dt { margin-left: 12px; }
+            dd {
+                margin: 0 12px;
+                &.property_description { margin-bottom: 8px; height: 90px; }
+                &.property_features {
+                    padding-left: 12px;
+                    li { font-size: 12px; }
+                    button { font-size: 11px; width: 100px; }
+                }
+            }
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+        .site-header .logo { background: #AAA }
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+        .site-header .logo { background: #777 }
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        .site-header .logo { background: #444 }
+    }
