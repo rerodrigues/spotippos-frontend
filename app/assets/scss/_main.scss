@@ -5,6 +5,7 @@ html, body {
 
 body {
     font: 'Roboto Condensed';
+    line-height: 1.5;
 
     input {
         font-family: inherit;
@@ -50,5 +51,6 @@ body {
     .site-main {
         display: flex;
         background-color: $bg-gray;
+        clear: both;
     }
 

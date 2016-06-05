@@ -80,6 +80,7 @@
             width: auto;
             margin: 0;
             padding: 8px 12px;
+            line-height: 1;
         }
         
         .property_filters ul li {
@@ -87,9 +88,8 @@
             padding: 0px 10px 6px 0;
             border: none;
             
-            &:nth-child(even) {
-                padding-right: 10px; padding-left: 0;
-            }
+            &:nth-child(even) { padding-right: 10px; padding-left: 0; }
+            &:last-child { margin-top: 16px; }
             
             label { font-size: 11px; }
             input { padding: 6px; }
@@ -102,11 +102,15 @@
 
     /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
-        body input {
-            &::-webkit-input-placeholder { font-size: 11px; }
-            &:-moz-placeholder { font-size: 11px; }
-            &::-moz-placeholder { font-size: 11px; }
-            &:-ms-input-placeholder { font-size: 11px; }
+        body {
+            line-height: 1;
+            
+            input {
+                &::-webkit-input-placeholder { font-size: 11px; }
+                &:-moz-placeholder { font-size: 11px; }
+                &::-moz-placeholder { font-size: 11px; }
+                &:-ms-input-placeholder { font-size: 11px; }
+            }
         }
         
         .property_filters ul li {
@@ -132,8 +136,13 @@
             }
         }
         
-        .property_details {
-            dd.property_features {
+        .property_details dd {
+            &.property_title { height: auto; }
+            &.property_description { height: auto; max-height: 84px; margin-bottom: 12px; }
+        }
+        
+        @media only screen and (min-width : 321px) {
+            .property_details dd.property_features {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -151,12 +160,35 @@
                     line-height: 1.3;
                 }
             }
-            dd.property_description { height: auto; max-height: 84px; }
         }
         
     }
 
     /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
+        .site-header {
+            .logo { width: 67px; }
+            .title { padding-left: 20px; font-size: 20px; }
+        }
         
+        .sidebar ul { margin: 8px 14px; }
+        
+        .property_filters ul li { width: 33.33%; }
+        
+        .results_list { padding: 11px; }
+        
+        .property_details {
+            min-width : auto;
+            
+            dt, dd { margin-left: 10px; }
+            dd {
+                &.property_description { margin: 4px 10px 12px; }
+                &.property_features {
+                    padding: 0 8px;
+                    
+                    li { font-size: 11px; }
+                    button { font-size: 10px; width: 90px; }
+                }
+            }
+        }
     }
