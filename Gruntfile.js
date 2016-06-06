@@ -2,6 +2,8 @@
 
 module.exports = function(grunt) {
 
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
     paths: {
       src: {
@@ -84,7 +86,7 @@ module.exports = function(grunt) {
       options: {
         sassDir: '<%= paths.src.css %>',
         cssDir: '<%= paths.dest.css %>',
-        sourcemap : true
+        sourcemap : false
       },
       dist: {
         options: {
@@ -161,7 +163,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-
+  
   grunt.registerTask('compile', [
     'jshint', 'compass:dist'
   ]);
