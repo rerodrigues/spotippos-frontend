@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spotippos.results.controllers',[])
-    .controller('resultsController',['$rootScope', '$scope', '$q', '$stateParams', 'resultsService', '$filter',
-        function($rootScope, $scope, $q, $stateParams, resultsService, $filter){
+    .controller('resultsController',['$rootScope', '$scope', '$q', '$stateParams', '$filter', 'resultsService', 'ITEMS_PER_PAGE',
+        function($rootScope, $scope, $q, $stateParams, $filter, resultsService, ITEMS_PER_PAGE){
         
         $scope.properties = [];
         
@@ -11,20 +11,11 @@ angular.module('spotippos.results.controllers',[])
         var allProperties = [],
             filteredProperties = [],
             offset = 0,
-            itemsPerPage = 2;
+            itemsPerPage = ITEMS_PER_PAGE;
             
         
         var filterProperties = function(filters) {
             return $q.resolve(filteredProperties =  $filter('matchCriteria')(allProperties, filters));
-        };
-        
-        var fetchAllProperties = function(bounds) {
-            resultsService.getPropertiesInBounds(bounds).then(function(data){
-                allProperties = data;
-                filterProperties($scope.filters).then(function(){
-                    $scope.getResults();
-                });
-            });
         };
         
         $scope.getResults = function() {
@@ -44,6 +35,13 @@ angular.module('spotippos.results.controllers',[])
             }
         });
         
-        fetchAllProperties();
+        (function () {
+            resultsService.getPropertiesInBounds().then(function(data){
+                allProperties = data;
+                filterProperties($scope.filters).then(function(){
+                    $scope.getResults();
+                });
+            });
+        }());
         
     }]);

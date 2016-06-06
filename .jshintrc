@@ -29,8 +29,9 @@
     "element": false,
     "by": false,
     
-    // Karma fixtures
-    "fixture" : false
+    // Karma/Jasmine
+    "fixture" : false,
+    "spyOn" : false
 	
   }
 }
