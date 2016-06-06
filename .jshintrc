@@ -3,6 +3,8 @@
   "latedef": true,
   "browser": true,
   "devel": true,
+  "sub": true,
+  
   "globals": {
     // Node
     "require": false,

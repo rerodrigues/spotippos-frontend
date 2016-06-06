@@ -8,7 +8,7 @@ module.exports = function(config) {
 	  'app/lib/jquery/jquery.js',
 	  'app/lib/angular/angular.js',
 	  'app/lib/angular/angular-animate.js',
-	  'app/angular-ui-router/angular-ui-router.js',
+	  'app/lib/angular-ui-router/angular-ui-router.js',
 	  'app/lib/ng-infinite-scroll/ng-infinite-scroll.js',
 	  'app/lib/angular/angular-mocks.js',
 	  
