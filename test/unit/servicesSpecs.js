@@ -4,13 +4,6 @@
 describe('[APP Config]', function() {
     beforeEach(module('spotippos.config'));
     
-    describe('version', function() {
-        it('should return current version', inject(function(version) {
-            expect(version).not.toBe(undefined);
-            expect(version).not.toBe(null);
-        }));
-    });
-    
     describe('Default bounds', function() {
         it('should return Spotippos full area bounds (0,0,1400,100)', inject(function(SPOTIPPOS_BOUNDS) {
             expect(SPOTIPPOS_BOUNDS).not.toBe(undefined);
@@ -32,7 +25,15 @@ describe('[APP Config]', function() {
             expect(PROPERTY_DETAILS_URL).not.toBe(undefined);
             expect(PROPERTY_DETAILS_URL).not.toBe(null);
         }));
-    });  
+    });
+    
+    describe('Items per page', function() {
+        it('should return items per page constant', inject(function(ITEMS_PER_PAGE) {
+            expect(ITEMS_PER_PAGE).not.toBe(undefined);
+            expect(ITEMS_PER_PAGE).not.toBe(null);
+            expect(typeof ITEMS_PER_PAGE).toBe("number");
+        }));
+    });
 });
 
 //tests for app/modules/results/js/services.js

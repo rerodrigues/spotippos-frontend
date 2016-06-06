@@ -15,7 +15,7 @@ module.exports = function(config) {
 	  'app/assets/js/**/*.js',
 	  'app/modules/**/*.js',
 	  
-	  'tests/unit/*.js',
+	  'test/unit/*.js',
 	  '_mock/*.json'
     ],
 	

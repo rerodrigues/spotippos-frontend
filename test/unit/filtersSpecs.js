@@ -86,7 +86,7 @@ describe('[spotippos.results.filters]', function() {
             
         }));
         
-        it('Should return only properties with id 2546', inject(function(matchCriteriaFilter) {
+        it('Should return only one property with an id of 2546', inject(function(matchCriteriaFilter) {
             var criteria = { id: 2546 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
             

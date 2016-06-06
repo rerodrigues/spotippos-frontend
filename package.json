@@ -42,7 +42,8 @@
     "server": "http-server -a localhost -p 8000 -c-1 ./",
     "dist-server": "http-server -a localhost -p 8080 -c-1 ./dist",
     "pretest": "npm install",
-    "test": "karma start ./tests/karma.conf.js",
-    "test-single-run": "karma start ./tests/karma.conf.js --single-run"
+    "test": "karma start ./test/karma.conf.js",
+    "test-single-run": "karma start ./test/karma.conf.js --single-run",
+    "test-chrome": "karma start ./test/karma.conf.js --browsers Chrome"
   }
 }
