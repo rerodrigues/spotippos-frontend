@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('spotippos.propertyFilter.controllers',[])
-    .controller('propertyFilterController',[ '$scope', '$state', '$stateParams', '$filter',
-        function($scope, $state, $stateParams, $filter){
-        
-        angular.extend($scope, { filters : $filter('compactObj')($stateParams) } );
+    .controller('propertyFilterController',[ '$scope', '$state', '$filter',
+        function($scope, $state, $filter){
         
         $scope.updateFilters = function(evt){
             
