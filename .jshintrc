@@ -25,7 +25,10 @@
     // Protractor
     "browser": false,
     "element": false,
-    "by": false
+    "by": false,
+    
+    // Karma fixtures
+    "fixture" : false
 	
   }
 }

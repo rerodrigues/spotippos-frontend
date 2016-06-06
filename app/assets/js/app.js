@@ -11,9 +11,11 @@ angular.module('spotippos.config',[])
     .constant('SPOTIPPOS_BOUNDS', { ax: 0, ay: 0, bx: 1000, by: 1400 })
     
     /* BUILD:LOCAL */ .constant('PROPERTIES_URL', '/_mock/properties_21.json')
+    /* BUILD:LOCAL */ .constant('PROPERTY_DETAILS_URL', '/_mock/property_1.json')
     /* BUILD:LOCAL */ .constant('HTTP_CACHE_ENABLED', false);
     
     /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties') */
+    /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties/1') */
     /* BUILD:ALL .constant('HTTP_CACHE_ENABLED', true); */
     
 angular.module('spotippos')
@@ -33,15 +35,7 @@ angular.module('spotippos')
             }).state('results.filtered', {
                 url: "/filters?{id:int}&{squareMeters:int}&{beds:int}&{baths:int}&{minPrice:int}&{maxPrice:int}",
             });
-    
+            
             $urlRouterProvider.otherwise('/results');
             $locationProvider.html5Mode(false);
     }]);
-    
-    /*
-    .config(['$cookiesProvider', function($cookiesProvider){
-        var expirationDate = new Date();
-        expirationDate.setDate(expirationDate.getDate() + 30);
-        $cookiesProvider.defaults.expires = expirationDate;
-    }]);
-    */
