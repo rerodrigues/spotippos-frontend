@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spotippos.results.controllers',[])
-    .controller('resultsController',['$rootScope', '$scope', '$q', '$stateParams', '$filter', 'resultsService', 'ITEMS_PER_PAGE',
-        function($rootScope, $scope, $q, $stateParams, $filter, resultsService, ITEMS_PER_PAGE){
+    .controller('resultsController',['$rootScope', '$scope', '$q', '$state', '$stateParams', '$filter', 'resultsService', 'ITEMS_PER_PAGE',
+        function($rootScope, $scope, $q, $state, $stateParams, $filter, resultsService, ITEMS_PER_PAGE){
         
         $scope.properties = [];
         
@@ -26,12 +26,18 @@ angular.module('spotippos.results.controllers',[])
         };
         
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams){
-            if(toState.name === 'results.filtered') {
+            if(toState.name === 'results' || toState.name === 'results.filtered') {
                 $scope.properties = [];
                 offset = 0;
                 filterProperties(toParams).then(function(){
                     $scope.getResults();
                 });
+            }
+        });
+        
+        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+            if(error.invalidOrBlankFilters) {
+                $state.go("results");
             }
         });
         

@@ -32,9 +32,17 @@ angular.module('spotippos')
             $stateProvider
             .state('results', {
                 url: "/results",
-                templateUrl:'modules/results/views/_results.html',
+                templateUrl:'modules/results/views/_results.html'
             }).state('results.filtered', {
                 url: "/filters?{id:int}&{squareMeters:int}&{beds:int}&{baths:int}&{minPrice:int}&{maxPrice:int}",
+                resolve: {
+                    filters: ['$stateParams', '$q', 'compactObjFilter', function($stateParams, $q, compactObjFilter) {
+                        var filters = compactObjFilter($stateParams);
+                        
+                        return Object.keys(filters).length > 0 ? filters :
+                                $q.reject({ invalidOrBlankFilters: true });
+                    }]
+                }
             });
             
             $urlRouterProvider.otherwise('/results');
