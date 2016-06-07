@@ -219,7 +219,7 @@
         &.property_description { height: auto; max-height: 84px; margin-bottom: 12px; }
     }
     
-    @media only screen and (min-width : 321px) {
+    @media only screen and (min-width : 376px) {
         .property_details dd.property_features {
             position: absolute;
             top: 0;
@@ -241,13 +241,24 @@
     }
 }
 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) { 
+/* Custom, galaxy S5 */ 
+@media only screen and (max-width : 375px) { 
     .results_list { padding: 11px; }
     
+    .results_property .property_photo {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: 224px;
+        img {
+            height: auto;
+            width: 100%;
+            max-width: none;
+            max-height: none;
+        }
+    }
     .property_details {
         min-width : auto;
-        
         dt, dd { margin-left: 10px; }
         dd {
             &.property_description { margin: 4px 10px 12px; }
