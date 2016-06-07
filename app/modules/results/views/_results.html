@@ -23,7 +23,7 @@
 					</section>
 						
 					<section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='endReached' infinite-scroll-distance="1" ng-cloak>
-						<section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-show="properties">
+						<section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
 							<div class="property_photo">
 								<img ng-src="{{ property.picture }}" />
 								<span>{{ property.price | currency : 'R$ ' : 0 }}</span>
@@ -43,8 +43,9 @@
 							</dl>
 						</section>
 						<div class="results_list_not-found" ng-show="!properties.length">
-							<svg><use xlink:href="assets/img/icons.svg#building" /></svg>
-							<strong>Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
+							<svg ng-class="{ blink : '!filteredProperties' }"><use xlink:href="assets/img/icons.svg#building" /></svg>
+							<strong ng-show="!filteredProperties" class="blink">Aguarde, localizando im&oacute;veis...</strong>
+							<strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
 						</div>
 					</section>
 					

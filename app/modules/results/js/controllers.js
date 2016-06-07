@@ -9,17 +9,17 @@ angular.module('spotippos.results.controllers',[])
         angular.extend($scope, { filters : $filter('compactObj')($stateParams) } );
         
         var allProperties = [],
-            filteredProperties = [],
             offset = 0,
             itemsPerPage = ITEMS_PER_PAGE;
-            
         
         var filterProperties = function(filters) {
-            return $q.resolve(filteredProperties =  $filter('matchCriteria')(allProperties, filters));
+            return $q.resolve($scope.filteredProperties =  $filter('matchCriteria')(allProperties, filters));
         };
         
         $scope.getResults = function() {
-            var results = filteredProperties.slice(offset, (offset + itemsPerPage));
+            var filteredProperties = $scope.filteredProperties || [],
+                results = filteredProperties.slice(offset, (offset + itemsPerPage));
+                
             $scope.properties = $scope.properties.concat(results);
             offset += results.length;
             $scope.endReached = offset >= filteredProperties.length;

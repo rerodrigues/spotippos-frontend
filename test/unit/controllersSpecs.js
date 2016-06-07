@@ -47,6 +47,7 @@ describe('[spotippos.results.controllers]', function() {
     
     describe('resultsController', function() {
         var $httpBackend,
+            propertiesFixture,
             ITEMS_PER_PAGE = 2;
             
         beforeEach(inject(function(_$httpBackend_, PROPERTIES_URL) {
@@ -54,7 +55,7 @@ describe('[spotippos.results.controllers]', function() {
             
             fixture.setBase('/');
             
-            var propertiesFixture = fixture.load(PROPERTIES_URL.replace(/^\//,''));
+            propertiesFixture = fixture.load(PROPERTIES_URL.replace(/^\//,''));
             $httpBackend.expectGET(new RegExp('^' + PROPERTIES_URL)).respond(propertiesFixture);
         }));
             
@@ -73,6 +74,8 @@ describe('[spotippos.results.controllers]', function() {
         it('Should retrieve the first page of results', function() {
             expect($scope.properties).not.toBe(undefined);
             expect($scope.properties.length).toBe(ITEMS_PER_PAGE);
+            expect($scope.filteredProperties).not.toBe(undefined);
+            expect($scope.filteredProperties.length).toBe(propertiesFixture.properties.length);
         });
         
         it('Should retrieve the next page of results', function() {
@@ -93,6 +96,7 @@ describe('[spotippos.results.controllers]', function() {
             expect($scope.properties.length).toBe(ITEMS_PER_PAGE);
             expect($scope.properties[0].beds).toBe("2");
             expect($scope.properties[$scope.properties.length-1].beds).toBe("2");
+            expect($scope.filteredProperties).not.toBe(undefined);
         }));
         
         it('Should reach the end of the results', inject(function($rootScope) {
@@ -105,6 +109,7 @@ describe('[spotippos.results.controllers]', function() {
             expect($scope.properties).not.toBe(undefined);
             expect($scope.properties.length).toBe(1);
             expect($scope.properties[0].id).toBe("5994");
+            expect($scope.filteredProperties).not.toBe(undefined);
             expect($scope.endReached).not.toBe(undefined);
             expect($scope.endReached).toBeTruthy();
         }));
