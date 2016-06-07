@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 				'app/**',
 				'!app/lib/**',
 				'!app/assets/{js,scss}/**',
+				'!app/assets/img/{png,jpg,gif}/**',
 				'!app/modules/**/*.{js,css,scss}'
 			],
 			dest: 'dist/',

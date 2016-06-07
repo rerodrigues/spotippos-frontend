@@ -2,6 +2,9 @@
 
 module.exports = function(grunt) {
 	return {
-        html: 'app/index.html'
+        html: 'app/index.html',
+        options: {
+            dest: 'dist/app'
+        }
     };
 };

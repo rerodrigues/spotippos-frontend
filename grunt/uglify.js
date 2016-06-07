@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             mangle: {
                 screw_ie8: true
             },
-            sourceMap: true,
+            sourceMap: false,
             banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */'
         }
 	};

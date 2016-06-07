@@ -31,6 +31,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('compile', ['jshint', 'compass:dist', 'svgstore']);
-    grunt.registerTask('build', ['clean', 'copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'cleanempty', 'clean:tmp' ]);
-    grunt.registerTask('default', ['compile', 'build']);
+    grunt.registerTask('build', ['compile', 'clean', 'copy', 'useminPrepare', 'replace:html', 'concat', 'replace:js', 'uglify', 'usemin', 'cleanempty', 'clean:tmp' ]);
+    grunt.registerTask('default', 'build');
 };
