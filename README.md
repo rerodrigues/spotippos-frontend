@@ -91,12 +91,12 @@ npm run server
     * Versão inicial
 
 ## Roadmap
-* 1.5.0 WIP
+* 1.1.0 _WIP_
     * Tela de detalhe de imóveis
     * Mapa da localização do imóvel em Spotippos na tela de detalhe
     * Filtro por províncias na barra lateral
-* 1.0.0 07/06/2016
-    * Versão inicial
+* ~~1.0.0 [07/06/2016]~~
+    * ~~Versão inicial~~
 
 ## Contato
 

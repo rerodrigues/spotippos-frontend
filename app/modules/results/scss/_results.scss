@@ -1,7 +1,6 @@
 .results_list {
-    margin: 16px;
-    margin-left: 0;
-    background-color: $white;
+    margin: 16px 22px 16px 0;
+    background-color: #FFF;
     flex: 1;
     
     padding: 15px 17px;
@@ -34,7 +33,7 @@
         display: flex;
         height: 224px;
         border-radius: 2px;
-        background-color: $white;
+        background-color: #FFF;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
         margin-bottom: 18px;
         &:last-child { margin-bottom: 0 }
@@ -58,7 +57,7 @@
             }
             & > span {
                 font: 600 23px/1.4 'Open Sans';
-                color: $white;
+                color: #FFF;
                 text-shadow:0px 1px 0px #333333;
                 position: absolute;
                 bottom: 0;
@@ -76,10 +75,10 @@
         dt {
             margin-left: 17px;
             font: 700 13px/1.2 'Roboto Condensed';
-            color: $warm-grey-three;
+            color: #878787;
             
             border-radius: 2px;
-            background-color: $white;
+            background-color: #FFF;
             border: solid 1px #e5e5e5;
             display: inline;
             padding: 0 6px;
@@ -98,7 +97,7 @@
             
             &.property_description {
                 font: 13px/1.6 'Roboto Condensed';
-                color: $warm-grey-three;
+                color: #878787;
                 height: 84px;
                 overflow: hidden;
                 margin-top: 4px;
@@ -108,7 +107,7 @@
             &.property_features {
                 height: 50px;
                 margin: 0;
-                padding: 0 4px 0 17px;
+                padding: 0 7px 0 17px;
                 background-color: $light-gray;
                 box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
                 
@@ -135,7 +134,7 @@
                     width: 144px;
                     height: 32px;
                     font: 700 14px/1.1 'Roboto Condensed';
-                    color: $white;
+                    color: #FFF;
                     text-transform: uppercase;
                     border-radius: 2px;
                     background-color: $azure;
@@ -148,3 +147,116 @@
         }
         
     }
+    
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+	.results_list { padding-left: 15px; padding-right: 15px; margin-right: 12px; }
+	.results_property {
+		height: 210px;
+		
+		.property_photo {
+			width: 278px; height: 210px;
+			
+			& img { width: 278px; height: 210px; }
+		}
+	}
+	.property_details {
+		margin-top : 0; min-width: 340px;
+		
+		dt { margin-left: 12px; }
+		dd {
+			margin: 0 12px;
+			
+			&.property_description { margin-bottom: 8px; height: 90px; }
+			&.property_features {
+				padding-left: 12px;
+				
+				li { font-size: 12px; }
+				button { font-size: 11px; width: 100px; }
+			}
+		}
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {  
+    .results_list {
+        margin: 0; margin-top: 8px;
+        
+        .results_list_not-found {
+            svg {
+                margin-top: 20px;
+                width: 60px; height: 62px;
+            }
+            strong {
+                font: 700 18px 'Roboto Condensed';
+                margin: 20px auto;
+            }
+        }
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {        
+    .results_property {
+        flex-flow: column;
+        height: auto;
+        position: relative;
+        
+        .property_photo {
+            img {
+                margin: 0;
+                display: block;
+                height: 224px;
+                width: 298px;
+            }
+            & > span { display: block; width: auto; }
+        }
+    }
+    
+    .property_details dd {
+        &.property_title { height: auto; }
+        &.property_description { height: auto; max-height: 84px; margin-bottom: 12px; }
+    }
+    
+    @media only screen and (min-width : 321px) {
+        .property_details dd.property_features {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 148px;
+            height: auto;
+            padding: 4px 17px 0;
+            
+            ul { float: none; }
+            li { display : block; }
+            button {
+                width: auto;
+                height: auto;
+                margin: 12px 0 6px;
+                padding: 8px;
+                line-height: 1.3;
+            }
+        }
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) { 
+    .results_list { padding: 11px; }
+    
+    .property_details {
+        min-width : auto;
+        
+        dt, dd { margin-left: 10px; }
+        dd {
+            &.property_description { margin: 4px 10px 12px; }
+            &.property_features {
+                padding: 0 8px;
+                
+                li { font-size: 11px; }
+                button { font-size: 10px; width: 90px; }
+            }
+        }
+    }
+}

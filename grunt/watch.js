@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             tasks: ['jshint']
         },
         compass: {
-            files: ['app/assets/scss/*.scss', 'app/modules/**/*.scss'],
+            files: ['app/assets/scss/*.scss', 'app/modules/**/scss/*.scss'],
             tasks: ['compass:dev']
         },
         svgstore: {

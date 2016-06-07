@@ -1,12 +1,9 @@
-@import "base/reset";
-@import "base/preset";
-
+@import "base";
 @import "fonts";
 @import "variables";
 
-@import "main";
+@import "layout";
 @import "sidebar";
-@import "results/filter";
-@import "results/list";
 
-@import "_responsive";
+@import "../../modules/property-filter/scss/filter";
+@import "../../modules/results/scss/results";

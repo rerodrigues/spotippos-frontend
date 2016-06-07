@@ -40,13 +40,13 @@ body {
             a {
                 position: relative;
                 margin: 11px auto;
-                color: $white;
+                color: #FFF;
             }
         }
         
         .title {
             font: 700 24px/60px 'Roboto Condensed';
-            color: $white;
+            color: #FFF;
             text-transform: uppercase;
             float: left;
             padding-left: 30px;
@@ -64,3 +64,41 @@ body {
             display: flex;
         }
     }
+	
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+	.site-header {
+		.logo { width : 90px; }
+		.title { padding-left: 17px; }
+	}
+}	
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.site-main {
+		flex-flow: column;
+		.site-content_results { flex-flow: column; }
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	body {
+		line-height: 1;
+		
+		input {
+			&::-webkit-input-placeholder { font-size: 11px; }
+			&:-moz-placeholder { font-size: 11px; }
+			&::-moz-placeholder { font-size: 11px; }
+			&:-ms-input-placeholder { font-size: 11px; }
+		}
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	.site-header {
+		.logo { width: 67px; }
+		.title { padding-left: 20px; font-size: 20px; }
+	}
+}

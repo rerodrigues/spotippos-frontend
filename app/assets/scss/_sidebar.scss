@@ -10,7 +10,7 @@
             border-radius: 4px;
             margin-bottom: 8px;
                 
-            &:hover { background-color: $azure; }
+            &.active { background-color: $azure; }
             
             a {
                 width: 91px;
@@ -18,7 +18,7 @@
                 display: block;
                 padding-top: 52px;
                 font: 700 11px 'Roboto Condensed';
-                color: $white;
+                color: #FFF;
                 text-decoration: none;
                 text-align: center;
                 text-transform: uppercase;
@@ -28,4 +28,46 @@
             &.adicionar a { background: url(../img/png/plus-icon.png) no-repeat center 15px}
         }
     }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+	.sidebar {
+        width : 90px;
+        ul > li a { width: 74px; font-size: 10px; }
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .sidebar {
+        width: 100%; margin: 0;
+        
+        ul {
+            margin : 8px;
+            
+            & > li {
+                display: inline-block;
+                margin-bottom: 0;
+                margin-right: 8px;
+                border-radius: 2px;
+                
+                a {
+                    width: auto;
+                    height: 52px;
+                    padding: 2px 12px 0 0;
+                    font-size: 14px;
+                    line-height: 52px;
+                }
+                
+                &.anuncios a, &.adicionar a { background-position: 12px center; background-size: 24px; padding-left: 48px; }
+                
+            }
+        }
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) { 
+    .sidebar ul { margin: 8px 14px; }
 }
