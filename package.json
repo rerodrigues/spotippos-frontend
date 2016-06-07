@@ -2,12 +2,12 @@
   "name": "vivareal-spotippos",
   "private": true,
   "version": "1.0.0",
-  "description": "The legend come alive!",
+  "description": "Find your property in Spotippos with this legendary application",
   "author": "Renato Rodrigues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VivaReal/code-challenge/"
+	"url": "https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
@@ -40,9 +40,13 @@
     "time-grunt": "^1.3.0"
   },
   "scripts": {
-    "server": "http-server -a localhost -p 8000 -c-1 ./",
-    "dist-server": "http-server -a localhost -p 8080 -c-1 ./dist",
-    "pretest": "npm install",
+    "preserver" : "grunt build",
+	"server": "http-server -a localhost -p 8000 -c-1 ./dist",
+	
+    "preserver-dev" : "grunt compile",    
+    "server-dev": "http-server -a localhost -p 8080 -c-1 ./",
+	
+	"pretest": "npm install",
     "test": "karma start ./test/karma.conf.js",
     "test-single-run": "karma start ./test/karma.conf.js --single-run",
     "test-chrome": "karma start ./test/karma.conf.js --browsers Chrome"
