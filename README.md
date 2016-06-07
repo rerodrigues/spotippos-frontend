@@ -5,11 +5,15 @@
 
 Você poderá utilizá-lo quando estiver em casa, no seu computador pessoal, ou na rua, em seu dispositivo móvel.
 
-![Tela principal - Desktop](docs/main-screen_desktop.png)
+![Tela inicial - Desktop](docs/main-screen_desktop.png)
 
-[Tela principal - Mobile](docs/main-screen_mobile.png)
+##### Telas
+[Tela inicial - Desktop](docs/main-screen_desktop.png) | [Tela inicial - Mobile](docs/main-screen_mobile.png) | [Tela inicial - Tablet](docs/main-screen_tablet.png)
 
 ## Instalação
+Para a instalação você vai precisar do NodeJS e Ruby instalados. Caso ainda não tenha, instale-os agora.
+
+Após a instalação de ambos, abra um prompt de comando (`cmd` no windows) e digite:
 
 ```sh
 git clone https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git
@@ -30,6 +34,8 @@ Sempre que precisar utilizar novamente roda apenas `npm run server` e abra http:
 Os arquivos fonte do projeto estão localizados na pasta *./app* estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080. 
 
 Os testes automatizados por padrão rodam no PhantomJS, mas existe a opção de rodá-los também no Google Chrome.
+
+
 
 ##### Utilização
 
@@ -94,7 +100,7 @@ npm run server
 
 ## Contato
 
-Renato Rodrigues – [about.me](https://about.me/renato.rodrigues)
+Renato Rodrigues – [about.me/renato.rodrigues](https://about.me/renato.rodrigues)
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
