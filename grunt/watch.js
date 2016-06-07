@@ -3,16 +3,20 @@
 module.exports = function(grunt) {
     return {
         index: {
-            files: 'index.html',
-            tasks: ['build']
+            files: 'app/index.html',
+            tasks: ['compile']
         },
         jshint: {
             files: ['<%= jshint.files %>'],
             tasks: ['jshint']
         },
         compass: {
-            files: 'app/**/*.scss',
+            files: ['app/assets/scss/*.scss', 'app/modules/**/*.scss'],
             tasks: ['compass:dev']
+        },
+        svgstore: {
+            files: 'app/assets/img/svg/*.svg',
+            tasks: ['svgstore']
         }
     };
 };

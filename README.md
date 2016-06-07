@@ -11,7 +11,7 @@ Você poderá utilizá-lo quando estiver em casa, no seu computador pessoal, ou 
 [Tela inicial - Desktop](docs/main-screen_desktop.png) | [Tela inicial - Mobile](docs/main-screen_mobile.png) | [Tela inicial - Tablet](docs/main-screen_tablet.png)
 
 ## Instalação
-Para a instalação você vai precisar do NodeJS e Ruby instalados. Caso ainda não tenha, instale-os agora.
+Para a instalação você vai precisar do [Node.js](https://nodejs.org/en/) e [Ruby](https://www.ruby-lang.org/pt/) instalados em sua máquina. Caso ainda não tenha, instale-os agora.
 
 Após a instalação de ambos, abra um prompt de comando (`cmd` no windows) e digite:
 

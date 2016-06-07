@@ -1,0 +1,11 @@
+*.komodoproject
+node_modules/
+_*/
+.sass-cache/
+
+.tmp/
+dist/
+
+app/assets/css/
+app/assets/img/icons.svg
+app/assets/img/sprites.svg
