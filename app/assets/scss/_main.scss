@@ -5,6 +5,7 @@ html, body {
 
 body {
     font: 100%/1.5 'Roboto Condensed';
+    svg { fill: currentColor; }
 
     input {
         font-family: inherit;
@@ -31,10 +32,15 @@ body {
             height: 60px;
             float: left;
             background-color: $azure;
-            a {
-                @include replace-text-with-dimensions('assets/img/png/logo-vivareal.png');
+            svg, a {
+                width: 48px;
+                height: 38px;
                 display: block;
+            }
+            a {
+                position: relative;
                 margin: 11px auto;
+                color: $white;
             }
         }
         

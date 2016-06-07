@@ -100,6 +100,17 @@
         
         .results_list {
             margin: 0; margin-top: 8px;
+            
+            .results_list_not-found {
+                svg {
+                    margin-top: 20px;
+                    width: 60px; height: 62px;
+                }
+                strong {
+                    font: 700 18px 'Roboto Condensed';
+                    margin: 20px auto;
+                }
+            }
         }
     }
 
