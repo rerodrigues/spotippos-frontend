@@ -2,7 +2,7 @@
 
 angular.module('spotippos',[ 'ngAnimate', 'ui.router', 'infinite-scroll',
     'spotippos.config', 'spotippos.controllers','spotippos.directives','spotippos.filters','spotippos.services',
-    'spotippos.results', 'spotippos.propertyFilter'
+    'spotippos.results', 'spotippos.propertyFilter', 'spotippos.propertyDetails'
 ]);
 
 
@@ -33,14 +33,25 @@ angular.module('spotippos')
             .state('results', {
                 url: "/results",
                 templateUrl:'modules/results/views/_results.html'
-            }).state('results.filtered', {
+            })
+            .state('results.filtered', {
                 url: "/filters?{id:int}&{squareMeters:int}&{beds:int}&{baths:int}&{minPrice:int}&{maxPrice:int}",
                 resolve: {
                     filters: ['$stateParams', '$q', 'compactObjFilter', function($stateParams, $q, compactObjFilter) {
                         var filters = compactObjFilter($stateParams);
                         
                         return Object.keys(filters).length > 0 ? filters :
-                                $q.reject({ invalidOrBlankFilters: true });
+                            $q.reject({ invalidOrBlankFilters: true });
+                    }]
+                }
+            })
+            .state('property', {
+                url: "/property/:id",
+                templateUrl:'modules/property-details/views/_details.html',
+                resolve: {
+                    filters: ['$stateParams', '$q', function($stateParams, $q) {
+                        return !isNaN(parseInt($stateParams.id)) ? true :
+                            $q.reject({ noPropertyId: true });
                     }]
                 }
             });

@@ -8,18 +8,15 @@ module.exports = function(grunt) {
                 style: 'display: none;',
             },
             files: {
-                'app/assets/img/sprites.svg': ['app/assets/img/svg/*.svg'],
+                'app/assets/img/sprites.svg': ['app/assets/img/svg/ic-*.svg'],
             }
         },
         icons : {
-            options: {
-                cleanup: ['fill'],
-            },
             svg: {
                 style: 'display: none;',
             },
             files: {
-                'app/assets/img/icons.svg': ['app/assets/img/svg/*.svg'],
+                'app/assets/img/icons.svg': ['app/assets/img/svg/*.svg', '!app/assets/img/svg/ic-*.svg'],
             }
         }
     };

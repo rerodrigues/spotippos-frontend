@@ -16,6 +16,10 @@ angular.module('spotippos.results.controllers',[])
             return $q.resolve($scope.filteredProperties =  $filter('matchCriteria')(allProperties, filters));
         };
         
+        $scope.viewDetails = function(id) {
+            $state.go('property', {id:id});
+        };
+        
         $scope.getResults = function() {
             var filteredProperties = $scope.filteredProperties || [],
                 results = filteredProperties.slice(offset, (offset + itemsPerPage));

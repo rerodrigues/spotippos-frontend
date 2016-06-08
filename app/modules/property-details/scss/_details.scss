@@ -1,0 +1,244 @@
+.property-info {
+    flex: 1;
+    margin: 16px 22px;
+    padding: 15px 17px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    
+    .property_not-found {
+        text-align: center;
+        color: #E6E6E6;
+        fill: currentColor;
+        
+        svg {
+            width: 90px;
+            height: 93px;
+            margin-top: 30px;
+            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
+        }
+        strong {
+            font: 700 20px 'Roboto Condensed';
+            text-transform: uppercase;
+            color: #D0D0D0;
+            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
+            display: block;
+            margin: 30px auto;
+        }
+    }
+	
+    .property {
+        display: flex;
+		position: relative;
+        margin-bottom: 18px;
+        padding: 8px;
+        border-radius: 2px;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
+        
+        &.ng-enter {
+            transition: 2s linear all;
+            opacity: 0;
+        }
+        &.ng-enter.ng-enter-active { opacity: 1; }
+        
+        .property_photos {
+            width: 298px;
+            flex: none;
+            
+            .photo {
+                background: #DDD url(../img/svg/logo-vivareal.svg) no-repeat center 40px/50%;
+                color: $brownish-grey;
+                height: 228px;
+            }
+            
+            img {
+                max-width: 298px;
+                max-height: 228px;
+                display: block;
+            }
+            
+            .map {
+                position: relative;
+                svg {
+                    height: 26px;
+                    width: 26px;
+                    position: absolute;
+                    color: $water-blue;
+                }
+            }
+            
+            h3 {
+                color: $greyish-brown;
+                font: 700 18px/1.5 'Roboto Condensed';
+                color: #444444;
+                margin-top: 20px;
+            }
+            
+        }
+    }
+    
+    .property_details {
+        min-width: 390px;
+        padding-top: 8px;
+		flex: 1;
+        
+        dt {
+            margin-left: 17px;
+            font: 700 13px/1.2 'Roboto Condensed';
+            color: #878787;
+            
+            border-radius: 2px;
+            background-color: #FFF;
+            border: solid 1px #e5e5e5;
+            display: inline;
+            padding: 0 6px;
+        }
+        dd {
+            margin: 0 17px;
+            
+            &.property_title {
+                font: 700 22px/1.5 'Roboto Condensed';
+                color: $greyish-brown;
+                margin-top: 7px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            
+            &.property_description {
+                font: 16px/1.6 'Roboto Condensed';
+                color: #878787;
+                margin-top: 4px;
+                margin-bottom: 20px;
+            }
+            
+            &.property_features {
+                margin: 0;
+                padding: 0 7px 0 17px;
+				
+                ul { float : left; }
+                li {
+					font: 700 18px 'Roboto Condensed';
+					color: #999999;
+					text-transform: uppercase;
+					line-height: 35px;
+					background-size: 35px;
+					background-position: 0 center;
+					background-repeat: no-repeat;
+					padding: 10px 0 10px 45px;
+                    
+                    &.price   { background-image: url(../img/svg/ic-coin-dollar.svg) }
+                    &.priceM2 { background-image: url(../img/svg/ic-stats-dots.svg) }
+                    &.m2      { background-image: url(../img/svg/ic-card-area.svg) }
+                    &.beds    { background-image: url(../img/svg/ic-card-beds.svg) }
+                    &.baths   { background-image: url(../img/svg/ic-card-bathroom.svg) }
+                }
+                button {
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+					padding: 10px 20px;
+                    font: 700 14px/1.1 'Roboto Condensed';
+                    color: #FFF;
+                    text-transform: uppercase;
+                    border-radius: 2px;
+                    background-color: $azure;
+                    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+	
+}
+    
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+	.property-info {
+		padding-left: 15px; padding-right: 15px; margin-right: 12px;
+		
+		.property {
+			.property_photos {
+                width: 278px;
+                .photo { height: 209px; }
+                img { max-width: 100%; max-height: 100%; }
+			}
+		}
+		.property_details {
+			min-width: 340px;
+			
+			dt { margin-left: 12px; }
+			dd {
+				margin: 0 12px;
+				
+				&.property_features { padding-left: 12px; }
+			}
+		}
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {  
+    .property-info {
+        margin: 0; margin-top: 8px;
+        
+        .property-info_not-found {
+            svg {
+                margin-top: 20px;
+                width: 60px; height: 62px;
+            }
+            strong {
+                font: 700 18px 'Roboto Condensed';
+                margin: 20px auto;
+            }
+        }
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .property-info {
+		padding: 11px;
+		
+		.property {
+            padding: 0;
+            flex-flow: column;
+            
+            .property_photos {
+                order : 2;
+                width: 100%;
+                padding: 7px;
+                
+                .photo {
+                    width: 100%;
+                    height: auto;
+                    min-height: 214px;
+                }
+                img {
+                    width: 100%;
+                    max-width: none;
+                    max-height: none;
+                }
+            }
+            .property_details {
+                order : 1;
+                min-width: auto;
+                
+                dt, dd { margin-left: 10px; margin-right: 10px; }
+                dd {
+                    &.property_title { height: auto; }
+                    &.property_description { margin: 4px 10px 12px; }
+                    &.property_features {
+                        position: relative;
+                        padding: 0;
+                        
+                        li { font-size: 16px; }
+                        button { right: 0; }
+                    }
+                }
+            }
+        }
+	}
+}
