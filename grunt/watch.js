@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         },
         compass: {
             files: ['app/assets/scss/*.scss', 'app/modules/**/scss/*.scss'],
-            tasks: ['compass:dev']
+            tasks: ['compass:dev', 'postcss:dev']
         },
         svgstore: {
             files: 'app/assets/img/svg/*.svg',

@@ -7,9 +7,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-	"url": "https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git"
+    "url": "https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "grunt": "^1.0.1",
     "grunt-cleanempty": "^1.0.4",
     "grunt-contrib-clean": "^1.0.0",
@@ -21,6 +22,7 @@
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
     "grunt-svgstore": "^1.0.0",
     "grunt-text-replace": "^0.4.0",
     "grunt-usemin": "~3.1.1",
@@ -40,13 +42,11 @@
     "time-grunt": "^1.3.0"
   },
   "scripts": {
-    "preserver" : "grunt build",
-	"server": "http-server -a localhost -p 8000 -c-1 ./dist",
-	
-    "preserver-dev" : "grunt compile",    
+    "preserver": "grunt build",
+    "server": "http-server -a localhost -p 8000 -c-1 ./dist",
+    "preserver-dev": "grunt compile",
     "server-dev": "http-server -a localhost -p 8080 -c-1 ./",
-	
-	"pretest": "npm install",
+    "pretest": "npm install",
     "test": "karma start ./test/karma.conf.js",
     "test-single-run": "karma start ./test/karma.conf.js --single-run",
     "test-chrome": "karma start ./test/karma.conf.js --browsers Chrome"
