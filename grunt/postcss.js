@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             ]
         },
         dist: {
-            src: '<%= paths.dest.css %>'
+            src: '<%= paths.dest.css %>/*.css'
         },
         dev: {
             src: 'app/assets/css/*.css'

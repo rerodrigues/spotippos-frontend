@@ -16,7 +16,7 @@ module.exports = function(config) {
 	  'app/modules/**/*.js',
 	  
 	  'test/unit/*.js',
-	  '_mock/*.json'
+	  'test/_mock-data/*.json'
     ],
 	
     preprocessors: {
