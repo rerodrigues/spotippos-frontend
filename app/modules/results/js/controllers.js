@@ -22,7 +22,6 @@ angular.module('spotippos.results.controllers',[])
                 
             $scope.properties = $scope.properties.concat(results);
             offset += results.length;
-            $scope.endReached = offset >= filteredProperties.length;
         };
         
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams){

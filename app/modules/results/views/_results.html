@@ -22,7 +22,7 @@
 						</form>
 					</section>
 						
-					<section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='endReached' infinite-scroll-distance="1" ng-cloak>
+					<section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='properties.length >= filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
 						<section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
 							<div class="property_photo">
 								<img ng-src="{{ property.picture }}" />

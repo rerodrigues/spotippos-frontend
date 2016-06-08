@@ -110,8 +110,7 @@ describe('[spotippos.results.controllers]', function() {
             expect($scope.properties.length).toBe(1);
             expect($scope.properties[0].id).toBe("5994");
             expect($scope.filteredProperties).not.toBe(undefined);
-            expect($scope.endReached).not.toBe(undefined);
-            expect($scope.endReached).toBeTruthy();
+            expect($scope.properties.length >= $scope.filteredProperties.length).toBeTruthy();
         }));
         
     });
