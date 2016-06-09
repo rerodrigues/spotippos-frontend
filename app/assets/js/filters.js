@@ -29,4 +29,10 @@ angular.module('spotippos.filters',[])
             
             return compactObj;
         };
+    })
+    .filter('slug', function(){
+        return function(str){
+            str = str || "";
+            return str.replace(/[^0-9a-zA-Z\s]/g,'').replace(/\s/g,'_').toLowerCase();
+        };
     });

@@ -49,11 +49,22 @@ angular.module('spotippos')
                 url: "/property/:id",
                 templateUrl:'modules/property-details/views/_details.html',
                 resolve: {
-                    filters: ['$stateParams', '$q', function($stateParams, $q) {
-                        return !isNaN(parseInt($stateParams.id)) ? true :
+                    validPropertyId: ['$stateParams', '$q', function($stateParams, $q) {
+                        return !isNaN(parseInt($stateParams.id, 10)) ? true :
                             $q.reject({ noPropertyId: true });
                     }]
                 }
+            })
+            .state('property.slug', {
+                url: "/:slug",
+                resolve:{
+                    slug: ['$stateParams', '$q', '$state', 'validPropertyId', function($stateParams, $q, $state, validPropertyId) {
+                        var slug = $stateParams.slug,
+                            validSlug = typeof slug === "string" && slug.replace(/\s/g,'').length > 0;
+                            
+                        return validSlug || $state.go('property', { id : $stateParams.id }, {location:'replace'});
+                    }
+                ]}
             });
             
             $urlRouterProvider.otherwise('/results');
