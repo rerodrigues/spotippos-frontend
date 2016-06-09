@@ -87,15 +87,21 @@ npm run server
 
 ## Histórico de lançamentos
 
-* 1.0.0
+* 1.1.0 _[09/06/2016]_
+    * Tela de detalhe de imóveis
+    * Mapa da localização do imóvel em Spotippos na tela de detalhe
+* 1.0.0 _[07/06/2016]_
     * Versão inicial
 
 ## Roadmap
-* 1.1.0 _WIP_
-    * Tela de detalhe de imóveis
-    * Mapa da localização do imóvel em Spotippos na tela de detalhe
+* 2.0.0
+    * Layout mobile first
+* 1.2.0
     * Filtro por províncias na barra lateral
-* ~~1.0.0 [07/06/2016]~~
+* ~~1.1.0~~
+    * ~~Tela de detalhe de imóveis~~
+    * ~~Mapa da localização do imóvel em Spotippos na tela de detalhe~~
+* ~~1.0.0~~ 
     * ~~Versão inicial~~
 
 ## Contato
