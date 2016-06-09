@@ -15,7 +15,7 @@
 										<input type="number" name="baths" min="1" max="4" ng-model="filters.baths" /></label></li>
 									<li><label>Valor
 										<input type="number" name="min-price" min="0" placeholder="M&iacute;nimo" ng-model="filters.minPrice" /></label></li>
-									<li><label>
+									<li><label>&nbsp;
 										<input type="number" name="max-price" min="1" placeholder="M&aacute;ximo" ng-model="filters.maxPrice" /></label></li>
 								</ul>
 							</fieldset>
@@ -43,8 +43,9 @@
 							</dl>
 						</section>
 						<div class="results_list_not-found" ng-show="!properties.length">
-							<svg ng-class="{ blink : '!filteredProperties' }"><use xlink:href="assets/img/icons.svg#building" /></svg>
+							<svg ng-show="!filteredProperties" class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
 							<strong ng-show="!filteredProperties" class="blink">Aguarde, localizando im&oacute;veis...</strong>
+							<svg ng-show="filteredProperties"><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
 							<strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
 						</div>
 					</section>

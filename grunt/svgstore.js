@@ -12,6 +12,9 @@ module.exports = function(grunt) {
             }
         },
         icons : {
+            options: {
+                cleanup: ['fill'],
+            },
             svg: {
                 style: 'display: none;',
             },

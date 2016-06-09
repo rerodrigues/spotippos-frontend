@@ -56,6 +56,19 @@ describe('[spotippos.filters]', function() {
         
     });
     
+    describe('slug', function() {
+        
+        it('Should remove all non alphanumeric character from a string and replace spaces by _', inject(function(slugFilter) {
+            
+            var inputStr = "Imóvel código 1154, com 3 quartos e 2 banheiros.@!#$%*''`",
+                resultStr = slugFilter(inputStr);
+                
+            expect(typeof resultStr).not.toBe("undefined");
+            expect(/[^0-9a-zA-Z_\s]/g.test(resultStr)).toBeFalsy();
+        })); 
+        
+    });
+    
 });
 
 //tests for app/modules/results/js/filters.js

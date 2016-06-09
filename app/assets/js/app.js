@@ -7,17 +7,17 @@ angular.module('spotippos',[ 'ngAnimate', 'ui.router', 'infinite-scroll',
 
 
 angular.module('spotippos.config',[])
-    .constant('version','1.0')
+    .constant('version','1.1.0')
     .constant('SPOTIPPOS_BOUNDS', { ax: 0, ay: 0, bx: 1000, by: 1400 })
     
     /* BUILD:LOCAL */ .constant('ITEMS_PER_PAGE', 4)
     /* BUILD:LOCAL */ .constant('PROPERTIES_URL', '/test/_mock-data/properties.json')
-    /* BUILD:LOCAL */ .constant('PROPERTY_DETAILS_URL', '/test/_mock-data/property.json')
+    /* BUILD:LOCAL */ .constant('PROPERTY_DETAILS_URL', '/test/_mock-data/property.json?')
     /* BUILD:LOCAL */ .constant('HTTP_CACHE_ENABLED', false);
     
     /* BUILD:ALL .constant('ITEMS_PER_PAGE', 6) */
     /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties') */
-    /* BUILD:ALL .constant('PROPERTIES_URL', 'http://spotippos.vivareal.com/properties/1') */
+    /* BUILD:ALL .constant('PROPERTY_DETAILS_URL', 'http://spotippos.vivareal.com/properties/') */
     /* BUILD:ALL .constant('HTTP_CACHE_ENABLED', true); */
     
 angular.module('spotippos')
@@ -58,7 +58,7 @@ angular.module('spotippos')
             .state('property.slug', {
                 url: "/:slug",
                 resolve:{
-                    slug: ['$stateParams', '$q', '$state', 'validPropertyId', function($stateParams, $q, $state, validPropertyId) {
+                    slug: ['$stateParams', '$state', 'validPropertyId', function($stateParams, $state, validPropertyId) {
                         var slug = $stateParams.slug,
                             validSlug = typeof slug === "string" && slug.replace(/\s/g,'').length > 0;
                             

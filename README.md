@@ -96,6 +96,9 @@ npm run server
 ## Roadmap
 * 2.0.0
     * Layout mobile first
+    * Calcular e exibir a província através da latitude e longitude
+    * Deploy automático para o S3/FTP
+    * Testes end-to-end
 * 1.2.0
     * Filtro por províncias na barra lateral
 * ~~1.1.0~~

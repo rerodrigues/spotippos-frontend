@@ -32,7 +32,15 @@ angular.module('spotippos.filters',[])
     })
     .filter('slug', function(){
         return function(str){
-            str = str || "";
-            return str.replace(/[^0-9a-zA-Z\s]/g,'').replace(/\s/g,'_').toLowerCase();
+            str = str && str.toLowerCase() || "";
+            
+			var fromChars = 'áàãâéêíóôõúç'.split(''),
+                toChars = 'aaaaeeiooouc'.split('');
+                
+            fromChars.forEach(function(inputChar, index){
+                str = str.replace(new RegExp('[' + inputChar + ']','g'), toChars[index]);
+            });
+            
+            return str.replace(/[^0-9a-z\s]/g,'').replace(/\s/g,'_');
         };
     });

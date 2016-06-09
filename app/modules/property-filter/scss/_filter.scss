@@ -24,9 +24,6 @@
                     padding-left: 6px;
                     padding-right: 0;
                 }
-                &:last-child {
-                    margin-top: 24px;
-                }
                 
                 label {
                     font: 12px/1.5 'Roboto Condensed';
@@ -69,7 +66,6 @@
         border: none;
         
         &:nth-child(even) { padding-right: 10px; padding-left: 0; }
-        &:last-child { margin-top: 16px; }
         
         label { font-size: 11px; }
         input { padding: 6px; }

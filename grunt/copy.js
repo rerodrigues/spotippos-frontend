@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 				'!app/lib/**',
 				'!app/assets/{js,scss}/**',
 				'!app/assets/img/{png,jpg,gif}/**',
-				'!app/modules/**/*.{js,css,scss}'
+				'!app/modules/**/*.{js,css,scss}',
+                'app/assets/img/png/spotippos-map.png'
 			],
 			dest: 'dist/',
 		},

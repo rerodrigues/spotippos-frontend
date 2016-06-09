@@ -11,8 +11,7 @@ angular.module('spotippos.propertyDetails.services', [])
                 
                 return $http({
                     method  : 'GET',
-                    url     : PROPERTY_DETAILS_URL,
-                    params  : { id : id }
+                    url     : [PROPERTY_DETAILS_URL, id].join('')
                 }).then(function(response){
                     var property = response.data;
                     
