@@ -6,10 +6,11 @@
                                 <div class="photo">
                                     <img ng-src="{{ property.picture }}" />
                                 </div>
-                                <h3>Localiza&ccedil;&atilde;o em spotippos</h3>
+                                <h3>Localiza&ccedil;&atilde;o em Spotippos</h3>
                                 <div class="map">
-                                    <img src="assets/img/png/spotippos.png" alt="Reino de Spotippos" />
-                                    <svg style="left:{{posX}};top:{{posY}}"><use xlink:href="assets/img/icons.svg#location" /></svg>
+                                    <img src="assets/img/png/spotippos-map.png" alt="Reino de Spotippos" />
+                                    <svg style="left:{{posX}};top:{{posY}}"><use xlink:href="assets/img/icons.svg#location"  /></svg>
+                                    <svg style="left:{{posX}};top:{{posY}}" class="shadow"><use xlink:href="assets/img/icons.svg#location" /></svg>
                                 </div>
 							</div>
 							<dl class="property_details">
@@ -24,7 +25,8 @@
 										<li class="beds">{{ property.beds }} Quartos</li>
 										<li class="baths">{{ property.baths }} Banheiros</li>
 									</ul>
-									<button ng-click="goBack()">Voltar</button>
+									<a href="#/results">Voltar</a>
+									<a href="#/results">Voltar</a>
 								</dd>
 							</dl>
 						</section>

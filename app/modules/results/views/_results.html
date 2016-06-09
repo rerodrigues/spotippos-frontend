@@ -1,5 +1,5 @@
 				<section class="site-content_results" ng-controller="resultsController" >
-					
+
 					<section class="results_filter clearfix" ng-controller="propertyFilterController" ng-cloak>
 						<form class="property_filters" name="propertyFilters" delegate-event="change,input,updateFilters" novalidate>
 							<fieldset>
@@ -21,7 +21,7 @@
 							</fieldset>
 						</form>
 					</section>
-						
+
 					<section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='properties.length >= filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
 						<section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
 							<div class="property_photo">
@@ -38,7 +38,7 @@
 										<li class="beds">{{ property.beds }} Quartos</li>
 										<li class="baths">{{ property.baths }} Banheiros</li>
 									</ul>
-									<button ng-click="viewDetails(property.id)">Visualizar anúncio</button>
+									<a href="#/property/{{ property.id }}">Visualizar anúncio</a>
 								</dd>
 							</dl>
 						</section>
@@ -48,5 +48,5 @@
 							<strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
 						</div>
 					</section>
-					
+
 				</section>
