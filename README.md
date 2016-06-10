@@ -52,19 +52,19 @@ grunt watch
 ```
 
 ##### Testes automatizados
-Arquivos ficam localizados em *./test*
+Arquivos ficam localizados em *./test* e os relatórios gerados em *./test/reports*
 
-PhantomJS (padrão)
+Google Chrome (padrão) - Clique em `[ DEBUG ]` para ver os resultados
 ```sh
 npm run test
+```
+PhantomJS
+```sh
+npm run test-phantom
 ```
 PhantomJS, execução única
 ```sh
 npm run test-single-run
-```
-Google Chrome
-```sh
-npm run test-chrome
 ```
 
 ##### Build

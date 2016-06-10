@@ -9,3 +9,4 @@ dist/
 app/assets/css/
 app/assets/img/icons.svg
 app/assets/img/sprites.svg
+test/reports/*

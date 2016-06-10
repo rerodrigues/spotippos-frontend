@@ -1,7 +1,7 @@
 {
   "name": "vivareal-spotippos",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Find your property in Spotippos with this legendary application",
   "author": "Renato Rodrigues",
   "license": "MIT",
@@ -17,7 +17,6 @@
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "~1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
@@ -32,7 +31,9 @@
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
     "karma-fixture": "^0.2.6",
+    "karma-html-reporter": "^0.2.7",
     "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "^0.2.0",
     "karma-json-fixtures-preprocessor": "0.0.6",
     "karma-junit-reporter": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
@@ -47,8 +48,8 @@
     "preserver-dev": "grunt compile",
     "server-dev": "http-server -a localhost -p 8080 -c-1 ./",
     "pretest": "npm install",
-    "test": "karma start ./test/karma.conf.js",
-    "test-single-run": "karma start ./test/karma.conf.js --single-run",
-    "test-chrome": "karma start ./test/karma.conf.js --browsers Chrome"
+    "test": "karma start ./test/karma.conf.js --debug",
+    "test-phantom": "karma start ./test/karma.conf.js --browsers PhantomJS",
+    "test-single-run": "karma start ./test/karma.conf.js --single-run --browsers PhantomJS"
   }
 }
