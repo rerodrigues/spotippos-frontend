@@ -24,7 +24,7 @@ angular.module('spotippos.propertyDetails.services', [])
                     property.picture = 'http://loremflickr.com/298/224/home,living,room/all/?' + property.id;
                     
                     return $q.resolve(property);
-                
+                    
                 }, function(error){
                     return $q.reject(error.data);
                 });

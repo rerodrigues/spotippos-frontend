@@ -25,10 +25,10 @@
             margin: 30px auto;
         }
     }
-	
+    
     .property {
         display: flex;
-		position: relative;
+        position: relative;
         margin-bottom: 18px;
         padding: 8px;
         border-radius: 2px;
@@ -57,20 +57,25 @@
                 display: block;
             }
             
-            .map {
+            .property-map {
                 position: relative;
-				img { opacity : 0.75; }
-                svg {
-                    height: 26px;
-                    width: 26px;
+                & > img { opacity : 0.75; }
+                & > div {
                     position: absolute;
-                    color: $water-blue;
-					transform: translate(-50%,-100%);
-					
-					&.shadow {
-						color: rgba(0,0,0, 0.25);
-						transform: skewX(-45deg) translate(-95%, -80%) scale(0.7);
-					}
+                    
+                    & > svg {
+                        height: 26px;
+                        width: 26px;
+                        position: absolute;
+                        transform: translate(-50%,-100%);
+                        color: $water-blue;
+                        
+                        &.shadow {
+                            color: rgba(0,0,0, 0.25);
+                            transform: skewX(-45deg) translate(-95%, -80%) scale(0.7);
+                        }
+                    }
+                
                 }
             }
             
@@ -88,7 +93,7 @@
     .property_details {
         min-width: 390px;
         padding-top: 8px;
-		flex: 1;
+        flex: 1;
         
         dt {
             margin-left: 17px;
@@ -122,17 +127,17 @@
             &.property_features {
                 margin: 0;
                 padding: 0 7px 0 17px;
-				
+                
                 ul { float : left; }
                 li {
-					font: 700 18px 'Roboto Condensed';
-					color: #999999;
-					text-transform: uppercase;
-					line-height: 35px;
-					background-size: 35px;
-					background-position: 0 center;
-					background-repeat: no-repeat;
-					padding: 10px 0 10px 45px;
+                    font: 700 18px 'Roboto Condensed';
+                    color: #999999;
+                    text-transform: uppercase;
+                    line-height: 35px;
+                    background-size: 35px;
+                    background-position: 0 center;
+                    background-repeat: no-repeat;
+                    padding: 10px 0 10px 45px;
                     
                     &.price   { background-image: url(../img/svg/ic-coin-dollar.svg) }
                     &.priceM2 { background-image: url(../img/svg/ic-stats-dots.svg) }
@@ -141,10 +146,10 @@
                     &.baths   { background-image: url(../img/svg/ic-card-bathroom.svg) }
                 }
                 a {
-					position: absolute;
-					right: 10px;
-					bottom: 10px;
-					padding: 9px;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    padding: 9px;
                     font: 700 14px/1.1 'Roboto Condensed';
                     color: #FFF;
                     text-transform: uppercase;
@@ -157,32 +162,32 @@
         }
         
     }
-	
+    
 }
     
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
-	.property-info {
-		padding-left: 15px; padding-right: 15px; margin-right: 12px;
-		
-		.property {
-			.property_photos {
+    .property-info {
+        padding-left: 15px; padding-right: 15px; margin-right: 12px;
+        
+        .property {
+            .property_photos {
                 width: 278px;
                 .photo { height: 209px; }
                 img { max-width: 100%; max-height: 100%; }
-			}
-		}
-		.property_details {
-			min-width: 340px;
-			
-			dt { margin-left: 12px; }
-			dd {
-				margin: 0 12px;
-				
-				&.property_features { padding-left: 12px; }
-			}
-		}
-	}
+            }
+        }
+        .property_details {
+            min-width: 340px;
+            
+            dt { margin-left: 12px; }
+            dd {
+                margin: 0 12px;
+                
+                &.property_features { padding-left: 12px; }
+            }
+        }
+    }
 }
 
 /* Small Devices, Tablets */
@@ -206,9 +211,9 @@
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
     .property-info {
-		padding: 11px;
-		
-		.property {
+        padding: 11px;
+        
+        .property {
             padding: 0;
             flex-flow: column;
             
@@ -246,5 +251,5 @@
                 }
             }
         }
-	}
+    }
 }

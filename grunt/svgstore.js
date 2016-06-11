@@ -19,9 +19,8 @@ module.exports = function(grunt) {
                 style: 'display: none;',
             },
             files: {
-                'app/assets/img/icons.svg': ['app/assets/img/svg/*.svg', '!app/assets/img/svg/ic-*.svg'],
+                'app/assets/img/icons.svg': ['app/assets/img/svg/*.svg', '!app/assets/img/svg/ic-*.svg', 'app/modules/**/img/*.svg'],
             }
         }
     };
 };
-              

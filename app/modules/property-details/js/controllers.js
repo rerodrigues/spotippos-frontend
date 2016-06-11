@@ -16,8 +16,7 @@ angular.module('spotippos.propertyDetails.controllers',[])
                 var posX = parseFloat(($scope.property.lat / SPOTIPPOS_BOUNDS.by) * 100).toFixed(2),
                     posY = parseFloat(($scope.property.long / SPOTIPPOS_BOUNDS.bx) * 100).toFixed(2);
                     
-                $scope.posX = posX + '%';
-                $scope.posY = posY + '%';
+                $scope.location = { x: posX + '%', y: posY + '%'};
             });
         }());
         

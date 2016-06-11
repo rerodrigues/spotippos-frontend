@@ -1,39 +1,35 @@
-				<section class="site-content_results" ng-controller="propertyDetailsController" >
-					
-					<section class="property-info clearfix" ng-cloak>
-						<section class="property clearfix" ng-if="property">
-							<div class="property_photos">
+                <section class="site-content_results" ng-controller="propertyDetailsController" >
+                    
+                    <section class="property-info clearfix" ng-cloak>
+                        <section class="property clearfix" ng-if="property">
+                            <div class="property_photos">
                                 <div class="photo">
                                     <img ng-src="{{ property.picture }}" />
                                 </div>
                                 <h3>Localiza&ccedil;&atilde;o em Spotippos</h3>
-                                <div class="map">
-                                    <img src="assets/img/png/spotippos-map.png" alt="Reino de Spotippos" />
-                                    <svg style="left:{{posX}};top:{{posY}}"><use xlink:href="assets/img/icons.svg#location"  /></svg>
-                                    <svg style="left:{{posX}};top:{{posY}}" class="shadow"><use xlink:href="assets/img/icons.svg#location" /></svg>
-                                </div>
-							</div>
-							<dl class="property_details">
-								<dt>ID {{ property.id }}</dt>
-								<dd class="property_title">{{ property.title }}</dd>
-								<dd class="property_description">{{ property.description }}</dd>
-								<dd class="property_features clearfix">
-									<ul>
-										<li class="price">{{ property.price | currency : 'R$ ' : 0 }}</li>
-										<li class="priceM2">{{ property.price/property.squareMeters | currency : 'R$ ' }} / M&sup2;</li>
-										<li class="m2">{{ property.squareMeters }} M&sup2;</li>
-										<li class="beds">{{ property.beds }} Quartos</li>
-										<li class="baths">{{ property.baths }} Banheiros</li>
-									</ul>
-									<a href="#/results">Voltar</a>
-									<a href="#/results">Voltar</a>
-								</dd>
-							</dl>
-						</section>
-						<section class="property_not-found" ng-show="!property">
-							<svg class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
-							<strong class="blink">Carregando dados do im&oacute;vel...</strong>
-						</section>
-					</section>
-					
-				</section>
+                                <property-map property-location="{{location}}"></property-map>
+                            </div>
+                            <dl class="property_details">
+                                <dt>ID {{ property.id }}</dt>
+                                <dd class="property_title">{{ property.title }}</dd>
+                                <dd class="property_description">{{ property.description }}</dd>
+                                <dd class="property_features clearfix">
+                                    <ul>
+                                        <li class="price">{{ property.price | currency : 'R$ ' : 0 }}</li>
+                                        <li class="priceM2">{{ property.price/property.squareMeters | currency : 'R$ ' }} / M&sup2;</li>
+                                        <li class="m2">{{ property.squareMeters }} M&sup2;</li>
+                                        <li class="beds">{{ property.beds }} Quartos</li>
+                                        <li class="baths">{{ property.baths }} Banheiros</li>
+                                    </ul>
+                                    <a href="#/results">Voltar</a>
+                                    <a href="#/results">Voltar</a>
+                                </dd>
+                            </dl>
+                        </section>
+                        <section class="property_not-found" ng-show="!property">
+                            <svg class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
+                            <strong class="blink">Carregando dados do im&oacute;vel...</strong>
+                        </section>
+                    </section>
+                    
+                </section>
