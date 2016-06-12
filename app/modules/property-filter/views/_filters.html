@@ -1,0 +1,19 @@
+    <form class="property_filters" name="propertyFilters" delegate-event="change,input,updateFilters" ng-cloak novalidate>
+        <fieldset>
+            <legend>Filtro</legend>
+            <ul>
+                <li><label>Id
+                    <input type="number" name="id" ng-model="filters.id" autocomplete="off" /></label></li>
+                <li><label>&Aacute;rea
+                    <input type="number" name="square-meters" min="20" max="240" ng-model="filters.squareMeters" ng-min="20" ng-max="240"/></label></li>
+                <li><label>Quartos
+                    <input type="number" name="beds" min="1" max="5" ng-model="filters.beds" /></label></li>
+                <li><label>Banheiros
+                    <input type="number" name="baths" min="1" max="4" ng-model="filters.baths" /></label></li>
+                <li><label>Valor
+                    <input type="number" name="min-price" min="0" placeholder="M&iacute;nimo" ng-model="filters.minPrice" /></label></li>
+                <li><label>&nbsp;
+                    <input type="number" name="max-price" min="1" placeholder="M&aacute;ximo" ng-model="filters.maxPrice" /></label></li>
+            </ul>
+        </fieldset>
+    </form>

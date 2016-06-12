@@ -1,53 +1,33 @@
-				<section class="site-content_results" ng-controller="resultsController" >
-
-					<section class="results_filter clearfix" ng-controller="propertyFilterController" ng-cloak>
-						<form class="property_filters" name="propertyFilters" delegate-event="change,input,updateFilters" novalidate>
-							<fieldset>
-								<legend>Filtro</legend>
-								<ul>
-									<li><label>Id
-										<input type="number" name="id" ng-model="filters.id" autocomplete="off" /></label></li>
-									<li><label>&Aacute;rea
-										<input type="number" name="square-meters" min="20" max="240" ng-model="filters.squareMeters" ng-min="20" ng-max="240"/></label></li>
-									<li><label>Quartos
-										<input type="number" name="beds" min="1" max="5" ng-model="filters.beds" /></label></li>
-									<li><label>Banheiros
-										<input type="number" name="baths" min="1" max="4" ng-model="filters.baths" /></label></li>
-									<li><label>Valor
-										<input type="number" name="min-price" min="0" placeholder="M&iacute;nimo" ng-model="filters.minPrice" /></label></li>
-									<li><label>&nbsp;
-										<input type="number" name="max-price" min="1" placeholder="M&aacute;ximo" ng-model="filters.maxPrice" /></label></li>
-								</ul>
-							</fieldset>
-						</form>
-					</section>
-
-					<section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='properties.length >= filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
-						<section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
-							<div class="property_photo">
-								<img ng-src="{{ property.picture }}" />
-								<span>{{ property.price | currency : 'R$ ' : 0 }}</span>
-							</div>
-							<dl class="property_details">
-								<dt>ID {{ property.id }}</dt>
-								<dd class="property_title">{{ property.title }}</dd>
-								<dd class="property_description">{{ property.description }}</dd>
-								<dd class="property_features clearfix">
-									<ul>
-										<li class="m2">{{ property.squareMeters }} M&sup2;</li>
-										<li class="beds">{{ property.beds }} Quartos</li>
-										<li class="baths">{{ property.baths }} Banheiros</li>
-									</ul>
-									<a href="#/property/{{ property.id }}/{{ property.title | slug }}">Visualizar anúncio</a>
-								</dd>
-							</dl>
-						</section>
-						<div class="results_list_not-found" ng-show="!properties.length">
-							<svg ng-show="!filteredProperties" class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
-							<strong ng-show="!filteredProperties" class="blink">Aguarde, localizando im&oacute;veis...</strong>
-							<svg ng-show="filteredProperties"><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
-							<strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
-						</div>
-					</section>
-
-				</section>
+                <section class="site-content_results" ng-controller="resultsController" >
+                    
+                    <section class="results_filter clearfix" property-filters></section>
+                    
+                    <section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='properties.length >= filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
+                        <section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
+                            <div class="property_photo">
+                                <img ng-src="{{ property.picture }}" />
+                                <span>{{ property.price | currency : 'R$ ' : 0 }}</span>
+                            </div>
+                            <dl class="property_details">
+                                <dt>ID {{ property.id }}</dt>
+                                <dd class="property_title">{{ property.title }}</dd>
+                                <dd class="property_description">{{ property.description }}</dd>
+                                <dd class="property_features clearfix">
+                                    <ul>
+                                        <li class="m2">{{ property.squareMeters }} M&sup2;</li>
+                                        <li class="beds">{{ property.beds }} Quartos</li>
+                                        <li class="baths">{{ property.baths }} Banheiros</li>
+                                    </ul>
+                                    <a href="#/property/{{ property.id }}/{{ property.title | slug }}">Visualizar anúncio</a>
+                                </dd>
+                            </dl>
+                        </section>
+                        <div class="results_list_not-found" ng-show="!properties.length">
+                            <svg ng-show="!filteredProperties" class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
+                            <strong ng-show="!filteredProperties" class="blink">Aguarde, localizando im&oacute;veis...</strong>
+                            <svg ng-show="filteredProperties"><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
+                            <strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
+                        </div>
+                    </section>
+                
+                </section>

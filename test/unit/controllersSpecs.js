@@ -1,41 +1,5 @@
 'use strict';
 
-//tests for app/modules/property-filter/controllers.js
-describe('[spotippos.propertyFilter.controllers]', function() {
-    beforeEach(module('spotippos.propertyFilter.controllers'));
-    beforeEach(module('spotippos.filters'));
-    beforeEach(module('ui.router'));
-    
-    describe('propertyFilterController', function() {
-        var stateParams;
-        
-        beforeEach(inject(function($rootScope, $controller, $state, $filter) {
-            
-            spyOn($state, 'go').and.callFake(function(state, params) {
-                stateParams = params;
-            });
-            
-            var $scope = $rootScope.$new();
-            $scope.filters = { baths : "4" };
-            
-            $controller('propertyFilterController', {
-                $scope: $scope, $state: $state, $filter: $filter
-            });
-            
-            $scope.updateFilters();
-        }));
-        
-        it('Should udpate scope filters and redirect to state properties.filtered', inject(function($state) {
-            expect($state.go).toHaveBeenCalled();
-            expect($state.go).toHaveBeenCalledWith('results.filtered', stateParams);
-            expect(stateParams).not.toBe(null);
-            expect(stateParams.baths).toBe("4");
-        }));
-        
-    });
-    
-});
-
 //tests for app/modules/results/controllers.js
 describe('[spotippos.results.controllers]', function() {
     beforeEach(module('spotippos.results.controllers'));

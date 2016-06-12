@@ -1,3 +1,14 @@
+.results_filter {
+    width: 230px;
+    margin: 16px 19px;
+    background-color: $medium-gray;
+    flex: none;
+    
+    padding: 13px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
 .results_list {
     margin: 16px 22px 16px 0;
     background-color: #FFF;
@@ -11,7 +22,7 @@
         text-align: center;
         color: #E6E6E6;
         fill: currentColor;
-
+        
         svg {
             width: 90px;
             height: 93px;
@@ -40,7 +51,7 @@
             opacity: 0;
         }
         &.ng-enter.ng-enter-active { opacity: 1; }
-
+        
         .property_photo {
             width: 298px;
             height: 224px;
@@ -48,7 +59,7 @@
             flex: none;
             background: #DDD url(../img/svg/logo-vivareal.svg) no-repeat center 40px/50%;
             color: $brownish-grey;
-
+            
             img {
                 max-width: 298px;
                 max-height: 228px;
@@ -70,12 +81,12 @@
         min-width: 390px;
         margin-top: 8px;
         width: 100%;
-
+        
         dt {
             margin-left: 17px;
             font: 700 13px/1.2 'Roboto Condensed';
             color: #878787;
-
+            
             border-radius: 2px;
             background-color: #FFF;
             border: solid 1px #e5e5e5;
@@ -84,7 +95,7 @@
         }
         dd {
             margin: 0 17px;
-
+            
             &.property_title {
                 font: 700 18px/1.5 'Roboto Condensed';
                 color: $greyish-brown;
@@ -93,7 +104,7 @@
                 overflow: hidden;
                 height: 1.5em;
             }
-
+            
             &.property_description {
                 font: 13px/1.6 'Roboto Condensed';
                 color: #878787;
@@ -102,14 +113,14 @@
                 margin-top: 4px;
                 margin-bottom: 20px;
             }
-
+            
             &.property_features {
                 height: 50px;
                 margin: 0;
                 padding: 0 7px 0 17px;
                 background-color: $light-gray;
                 box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-
+                
                 ul {
                   float: left;
                 }
@@ -123,7 +134,7 @@
                     text-transform: uppercase;
                     margin-right: 11px;
                     &:last-child { margin-right: 0px; }
-
+                    
                     &.m2    { background: url(../img/svg/ic-card-area.svg) no-repeat center 10px }
                     &.beds  { background: url(../img/svg/ic-card-beds.svg) no-repeat center 10px}
                     &.baths { background: url(../img/svg/ic-card-bathroom.svg) no-repeat center 10px}
@@ -137,53 +148,65 @@
                     background-color: $azure;
                     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
                     margin-top: 10px;
-					padding: 9px;
+                    padding: 9px;
                     text-align: center;
                 }
             }
         }
-
+        
     }
 
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
-	.results_list {
-		padding-left: 15px; padding-right: 15px; margin-right: 12px;
-		.results_property {
-			height: 210px;
-
-			.property_photo {
-				width: 278px; height: 210px;
-
-				& img { width: 278px; height: 210px; }
-			}
-		}
-		.property_details {
-			margin-top : 0; min-width: 340px;
-
-			dt { margin-left: 12px; }
-			dd {
-				margin: 0 12px;
-
-				&.property_description { margin-bottom: 8px; height: 90px; }
-				&.property_features {
-					padding-left: 12px;
-
-					li { font-size: 12px; }
-					a { font-size: 11px; }
-				}
-			}
-		}
-	}
+    .results_filter {
+        width: 200px; margin: 16px 12px;
+    }
+    
+    .results_list {
+        padding-left: 15px; padding-right: 15px; margin-right: 12px;
+        
+        .results_property {
+            height: 210px;
+            
+            .property_photo {
+                width: 278px; height: 210px;
+                
+                & img { width: 278px; height: 210px; }
+            }
+        }
+        .property_details {
+            margin-top : 0; min-width: 340px;
+            
+            dt { margin-left: 12px; }
+            dd {
+                margin: 0 12px;
+                
+                &.property_description { margin-bottom: 8px; height: 90px; }
+                &.property_features {
+                    padding-left: 12px;
+                    
+                    li { font-size: 12px; }
+                    a { font-size: 11px; }
+                }
+            }
+        }
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+    .results_filter {
+        width: auto;
+        margin: 0;
+        padding: 8px 12px;
+        line-height: 1;
+    }
+    
     .results_list {
         margin: 0; margin-top: 8px;
-
+        
         .results_list_not-found {
             svg {
                 margin-top: 20px;
@@ -199,82 +222,82 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-	.results_list {
-		.results_property {
-			flex-flow: column;
-			height: auto;
-			position: relative;
-
-			.property_photo {
-				img {
-					margin: 0;
-					display: block;
-					height: 224px;
-					width: 298px;
-				}
-				& > span { display: block; width: auto; }
-			}
-		}
-
-		.property_details dd {
-			&.property_title { height: auto; }
-			&.property_description { height: auto; max-height: 84px; margin-bottom: 12px; }
-		}
-	}
+    .results_list {
+        .results_property {
+            flex-flow: column;
+            height: auto;
+            position: relative;
+            
+            .property_photo {
+                img {
+                    margin: 0;
+                    display: block;
+                    height: 224px;
+                    width: 298px;
+                }
+                & > span { display: block; width: auto; }
+            }
+        }
+        
+        .property_details dd {
+            &.property_title { height: auto; }
+            &.property_description { height: auto; max-height: 84px; margin-bottom: 12px; }
+        }
+    }
 
     @media only screen and (min-width : 376px) {
-		.results_list {
-			.property_details dd.property_features {
-				position: absolute;
-				top: 0;
-				right: 0;
-				max-width: 148px;
-				height: auto;
-				padding: 4px 17px 0;
-
-				ul { float: none; }
-				li { display : block; }
-				a {
-					width: auto;
-					height: auto;
-					margin: 12px 0 6px;
-					padding: 8px;
-					line-height: 1.3;
-				}
-			}
-		}
+        .results_list {
+            .property_details dd.property_features {
+                position: absolute;
+                top: 0;
+                right: 0;
+                max-width: 148px;
+                height: auto;
+                padding: 4px 17px 0;
+                
+                ul { float: none; }
+                li { display : block; }
+                a {
+                    width: auto;
+                    height: auto;
+                    margin: 12px 0 6px;
+                    padding: 8px;
+                    line-height: 1.3;
+                }
+            }
+        }
     }
 }
 
 /* Custom, galaxy S5 */
 @media only screen and (max-width : 375px) {
     .results_list {
-		padding: 11px;
-
-		.results_property .property_photo {
-			margin: 0 auto;
-			width: 100%;
-			height: auto;
-			min-height: 224px;
-			img {
-				height: auto;
-				width: 100%;
-				max-width: none;
-				max-height: none;
-			}
-		}
-		.property_details {
-			min-width : auto;
-			dt, dd { margin-left: 10px; }
-			dd {
-				&.property_description { margin: 4px 10px 12px; }
-				&.property_features {
-					padding: 0 8px;
-
-					li { font-size: 11px; }
-					a { font-size: 10px; width: 90px; margin-top: 5px; }
-				}
-			}
-		}
-	}
+        padding: 11px;
+        
+        .results_property .property_photo {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            min-height: 224px;
+            img {
+                height: auto;
+                width: 100%;
+                max-width: none;
+                max-height: none;
+            }
+        }
+        .property_details {
+            min-width : auto;
+            dt, dd { margin-left: 10px; }
+            dd {
+                &.property_description { margin: 4px 10px 12px; }
+                &.property_features {
+                    padding: 0 8px;
+                    
+                    li { font-size: 11px; }
+                    a { font-size: 10px; width: 90px; margin-top: 5px; }
+                }
+            }
+        }
+    }
 }
