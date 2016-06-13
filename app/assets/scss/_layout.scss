@@ -1,11 +1,11 @@
 html, body {
     height: 100%;
-	margin: 0px;
+    margin: 0px;
 }
 
 body {
     font: 100%/1.5 'Roboto Condensed';
-	a { text-decoration: none; }
+    a { text-decoration: none; }
     svg { fill: currentColor; }
 
     input {
@@ -18,7 +18,9 @@ body {
     min-width: 320px;
     max-width: 1280px;
     margin: 0 auto;
-    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
 }
     .site-header {
         height: 60px;
@@ -52,47 +54,51 @@ body {
     
     .site-main {
         display: flex;
-        background-color: $bg-gray;
         clear: both;
+        flex : 1;
+        background: $bg-gray url(../img/svg/logo-vivareal.svg) no-repeat center center/15%;
         
         .sidebar { flex: none; }
         .site-content { flex: 1; }
         .site-content_results {
             display: flex;
+            min-height: 100%;
         }
     }
-	
+    
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
-	.site-header {
-		.logo { width : 90px; }
-		.title { padding-left: 17px; }
-	}
-}	
+    .site-header {
+        .logo { width : 90px; }
+        .title { padding-left: 17px; }
+    }
+}    
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.site-main {
-		flex-flow: column;
-		.site-content_results { flex-flow: column; }
-	}
+    .site-main {
+        flex-flow: column;
+        background-position : center 166px;
+        
+        .site-content_results { flex-flow: column; }
+    }
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-	body {
-		line-height: 1;
-		
-		input {
+    body {
+        line-height: 1;
+        
+        input {
             @include placeholder { font-size: 11px; }
-		}
-	}
+        }
+    }
 }
 
 /* Custom, galaxy S5 */ 
 @media only screen and (max-width : 375px) {
-	.site-header {
-		.logo { width: 67px; }
-		.title { padding-left: 20px; font-size: 20px; }
-	}
+    .site-header {
+        .logo { width: 67px; }
+        .title { padding-left: 20px; font-size: 20px; }
+    }
 }

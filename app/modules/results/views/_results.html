@@ -23,10 +23,14 @@
                             </dl>
                         </section>
                         <div class="results_list_not-found" ng-show="!properties.length">
-                            <svg ng-show="!filteredProperties" class="blink"><use xlink:href="assets/img/icons.svg#building" /></svg>
-                            <strong ng-show="!filteredProperties" class="blink">Aguarde, localizando im&oacute;veis...</strong>
-                            <svg ng-show="filteredProperties"><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
-                            <strong ng-show="filteredProperties">Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
+                            <div ng-show="!filteredProperties" class="ng-animate-disabled blink">
+                                <svg><use xlink:href="assets/img/icons.svg#building" /></svg>
+                                <strong>Aguarde, localizando im&oacute;veis...</strong>
+                            </div>
+                            <div ng-show="filteredProperties">
+                                <svg><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
+                                <strong>Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
+                            </div>
                         </div>
                     </section>
                 

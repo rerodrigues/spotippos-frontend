@@ -25,7 +25,9 @@ angular.module('spotippos')
         '$httpProvider', 'HTTP_CACHE_ENABLED',
         function($httpProvider, HTTP_CACHE_ENABLED){
             $httpProvider.defaults.cache = HTTP_CACHE_ENABLED;
-    }])
+    }]).config(function($animateProvider) {
+        $animateProvider.classNameFilter(/^((?!(ng-animate-disabled)).)*$/);
+    })
     .config([
         '$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider){

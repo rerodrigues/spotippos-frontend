@@ -7,22 +7,27 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
     
     .property_not-found {
-        text-align: center;
+        display: flex;
+        min-height: 100%;
+        align-items: center;
         color: #E6E6E6;
         fill: currentColor;
         
+        & > div {
+            text-align: center;
+            margin: 0 auto;
+        }
         svg {
             width: 90px;
             height: 93px;
-            margin-top: 30px;
         }
         strong {
-            font: 700 20px 'Roboto Condensed';
-            text-transform: uppercase;
-            color: #D0D0D0;
-            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
             display: block;
-            margin: 30px auto;
+            font: 700 20px 'Roboto Condensed';
+            color: #D0D0D0;
+            text-transform: uppercase;
+            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
+            margin-top: 30px;
         }
     }
     
@@ -194,17 +199,6 @@
 @media only screen and (max-width : 768px) {  
     .property-info {
         margin: 0; margin-top: 8px;
-        
-        .property-info_not-found {
-            svg {
-                margin-top: 20px;
-                width: 60px; height: 62px;
-            }
-            strong {
-                font: 700 18px 'Roboto Condensed';
-                margin: 20px auto;
-            }
-        }
     }
 }
 
@@ -212,6 +206,11 @@
 @media only screen and (max-width : 480px) {
     .property-info {
         padding: 11px;
+        
+        .property_not-found {
+            svg { width: 60px; height: 62px; }
+            strong { font: 700 18px 'Roboto Condensed'; }
+        }
         
         .property {
             padding: 0;

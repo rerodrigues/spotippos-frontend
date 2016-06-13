@@ -19,22 +19,27 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
 
     .results_list_not-found {
-        text-align: center;
+        display: flex;
+        min-height: 100%;
+        align-items: center;
         color: #E6E6E6;
         fill: currentColor;
         
+        & > div {
+            text-align: center;
+            margin: 0 auto;
+        }
         svg {
             width: 90px;
             height: 93px;
-            margin-top: 30px;
         }
         strong {
-            font: 700 20px 'Roboto Condensed';
-            text-transform: uppercase;
-            color: #D0D0D0;
-            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
             display: block;
-            margin: 30px auto;
+            font: 700 20px 'Roboto Condensed';
+            color: #D0D0D0;
+            text-transform: uppercase;
+            text-shadow: rgba(229, 229, 229, 0.66) 1px 1px 0px;
+            margin-top: 30px;
         }
     }
 
@@ -45,6 +50,7 @@
         background-color: #FFF;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
         margin-bottom: 18px;
+        
         &:last-child { margin-bottom: 0 }
         &.ng-enter {
             transition: 2s linear all;
@@ -206,23 +212,16 @@
     
     .results_list {
         margin: 0; margin-top: 8px;
-        
-        .results_list_not-found {
-            svg {
-                margin-top: 20px;
-                width: 60px; height: 62px;
-            }
-            strong {
-                font: 700 18px 'Roboto Condensed';
-                margin: 20px auto;
-            }
-        }
     }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
     .results_list {
+        .results_list_not-found {
+            svg {  width: 60px; height: 62px; }
+            strong { font: 700 18px 'Roboto Condensed'; }
+        }
         .results_property {
             flex-flow: column;
             height: auto;
