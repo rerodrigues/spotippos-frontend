@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(grunt) {
-	return {
+    return {
         options: {
             report: 'min',
             mangle: {
@@ -10,5 +10,5 @@ module.exports = function(grunt) {
             sourceMap: false,
             banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */'
         }
-	};
+    };
 };

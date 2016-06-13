@@ -34,7 +34,7 @@ angular.module('spotippos.filters',[])
         return function(str){
             str = str && str.toLowerCase() || "";
             
-			var fromChars = 'áàãâéêíóôõúç'.split(''),
+            var fromChars = 'áàãâéêíóôõúç'.split(''),
                 toChars = 'aaaaeeiooouc'.split('');
                 
             fromChars.forEach(function(inputChar, index){

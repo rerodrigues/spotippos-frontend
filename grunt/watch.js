@@ -4,15 +4,15 @@ module.exports = function(grunt) {
     return {
         index: {
             files: 'app/index.html',
-            tasks: ['compile']
+            tasks: ['lintspaces:html', 'compile']
         },
         jshint: {
             files: ['<%= jshint.files %>'],
-            tasks: ['jshint']
+            tasks: ['lintspaces:js', 'jshint']
         },
         compass: {
             files: ['app/assets/scss/*.scss', 'app/modules/**/scss/*.scss'],
-            tasks: ['compass:dev', 'postcss:dev']
+            tasks: ['lintspaces:css', 'compass:dev', 'postcss:dev']
         },
         svgstore: {
             files: 'app/assets/img/svg/*.svg',

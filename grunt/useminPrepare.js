@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(grunt) {
-	return {
+    return {
         html: 'app/index.html',
         options: {
             dest: 'dist/app'
