@@ -8,7 +8,9 @@ Você poderá utilizá-lo quando estiver em casa, no seu computador pessoal, ou 
 ![Tela inicial - Desktop](docs/main-screen_desktop.png)
 
 ##### Telas
-[Tela inicial - Desktop](docs/main-screen_desktop.png) | [Tela inicial - Mobile](docs/main-screen_mobile.png) | [Tela inicial - Tablet](docs/main-screen_tablet.png)
+**Tela Incial**: [ [Desktop](docs/main-screen_desktop.png) | [Mobile](docs/main-screen_mobile.png) | [Tablet](docs/main-screen_tablet.png) ]
+
+**Detalhes do anúncio**: [ [Desktop](docs/details-screen_desktop.png) | [Mobile](docs/details-screen_mobile.png) | [Tablet](docs/details-screen_tablet.png) ]
 
 ## Instalação
 Para a instalação você vai precisar do [Node.js](https://nodejs.org/en/) e [Ruby](https://www.ruby-lang.org/pt/) instalados em sua máquina. Caso ainda não tenha, instale-os agora.
