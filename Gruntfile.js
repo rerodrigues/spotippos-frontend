@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('compile', ['lintspaces', 'jshint', 'compass:dist', 'postcss:dist', 'svgstore']);
-    grunt.registerTask('build', ['compile', 'clean', 'copy', 'useminPrepare', 'replace:html', 'concat', 'replace:js', 'uglify', 'usemin', 'cleanempty', 'clean:tmp' ]);
+    grunt.registerTask('compile', ['lintspaces', 'jshint', 'compass:dist', 'postcss:dist', 'svgstore', 'notify:compile']);
+    grunt.registerTask('build', ['compile', 'clean', 'copy', 'useminPrepare', 'replace:html', 'concat', 'replace:js', 'uglify', 'usemin', 'cleanempty', 'clean:tmp', 'notify:build']);
     grunt.registerTask('default', 'build');
 };
