@@ -1,0 +1,9 @@
+{
+  "directory": "./app/libs",
+  "color": true,
+  "save" : true,
+  "scripts": {
+    "preinstall": "",
+    "postinstall": ""
+  }
+}

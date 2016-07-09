@@ -7,6 +7,7 @@ _*/
 dist/
 
 app/assets/css/
+app/libs/
 app/assets/img/icons.svg
 app/assets/img/sprites.svg
 test/reports/*

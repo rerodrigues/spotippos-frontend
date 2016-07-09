@@ -1,0 +1,31 @@
+{
+  "name": "vivareal-spotippos",
+  "description": "Find your property in Spotippos with this legendary application",
+  "main": "index.html",
+  "authors": [
+    "Renato Rodrigues"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "spotippos",
+    "realestate"
+  ],
+  "homepage": "https://bitbucket.org/renato_rodrigues/vivareal-spotippos",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.4",
+    "angular": "~1.5.5",
+    "angular-i18n": "~1.5.5",
+    "angular-animate": "~1.5.5",
+    "angular-ui-router": "~0.2.18",
+    "ngInfiniteScroll": "~1.3.0"
+  }
+}

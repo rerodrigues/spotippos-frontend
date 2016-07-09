@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             cwd: '',
             src: [
                 'app/**',
-                '!app/lib/**',
+                '!app/libs/**',
                 '!app/assets/{js,scss}/**',
                 '!app/assets/img/{png,jpg,gif}/**',
                 '!app/modules/**/*.{js,css,scss}',
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             ],
             dest: 'dist/',
         },
-        
+
         fonts: {
             expand: true,
             cwd: '',

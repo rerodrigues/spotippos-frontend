@@ -4,13 +4,13 @@
         <meta charset="utf-8" />
         <!-- BUILD:LOCAL --><base href="/app/" />
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-        
+
         <title>Spotippos - An&uacute;ncios</title>
         <meta name="description" content="Encontre seu im&oacute;vel em Spottipos atrav&eacute;s de uma rica experi&ecirc;ncia, utilizando diversos filtros para refinar os resultados" />
-        
+
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        
+
         <!-- App Icons -->
         <link rel="apple-touch-icon" sizes="57x57" href="assets/img/ico/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="assets/img/ico/apple-icon-60x60.png" />
@@ -29,10 +29,10 @@
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="assets/img/ico/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-        
+
         <link rel="stylesheet" href="assets/css/spotippos.css" />
     </head>
-    
+
     <body>
         <div class="main-wrap">
             <header class="site-header clearfix">
@@ -43,7 +43,7 @@
                 </div>
                 <h1 class="title">Spotippos - An&uacute;ncios</h1>
             </header>
-            
+
             <main class="site-main clearfix">
                 <section class="sidebar clearfix">
                     <nav clas="sidebar_links">
@@ -53,43 +53,44 @@
                         </ul>
                     </nav>
                 </section>
-                
+
                 <section class="site-content">
                     <ui-view></ui-view>
                 </section>
-                
+
             </main>
         </div>
     </body>
-    
-    <!-- build:js assets/js/vendor.min.js -->    
-    <script src="lib/jquery/jquery.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/i18n/angular-locale_pt-br.js"></script>
-    <script src="lib/angular/angular-animate.js"></script>
-    <script src="lib/angular-ui-router/angular-ui-router.js"></script>
-    <script src="lib/ng-infinite-scroll/ng-infinite-scroll.js"></script>
+
+    <!-- build:js assets/js/vendor.min.js -->
+
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
     <!-- endbuild -->
 
-    <!-- build:js assets/js/app.min.js -->    
+    <!-- build:js assets/js/app.min.js -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/controllers.js"></script>
     <script src="assets/js/directives.js"></script>
     <script src="assets/js/filters.js"></script>
     <script src="assets/js/services.js"></script>
-    
+
     <script src="modules/results/resultsModule.js"></script>
     <script src="modules/results/js/controllers.js"></script>
     <script src="modules/results/js/filters.js"></script>
     <script src="modules/results/js/directives.js"></script>
     <script src="modules/results/js/services.js"></script>
-    
+
     <script src="modules/property-filter/propertyFilterModule.js"></script>
     <script src="modules/property-filter/js/controllers.js"></script>
     <script src="modules/property-filter/js/filters.js"></script>
     <script src="modules/property-filter/js/directives.js"></script>
     <script src="modules/property-filter/js/services.js"></script>
-    
+
     <script src="modules/property-details/propertyDetailsModule.js"></script>
     <script src="modules/property-details/js/controllers.js"></script>
     <script src="modules/property-details/js/filters.js"></script>

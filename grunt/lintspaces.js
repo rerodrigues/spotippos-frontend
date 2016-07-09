@@ -20,7 +20,7 @@ module.exports = function(grunt) {
             src: [
                 'app/**/*.js',
                 'app/**/*.json',
-                '!app/lib/**/*',
+                '!app/libs/**/*',
                 'grunt/*.js',
                 'test/*.js'
             ],
