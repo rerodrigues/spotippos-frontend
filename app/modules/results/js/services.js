@@ -1,39 +1,26 @@
 'use strict';
 
 angular.module('spotippos.results.services', [])
-    .factory('resultsService',['$http','$q', 'PROPERTIES_URL', 'SPOTIPPOS_BOUNDS', function($http, $q, PROPERTIES_URL, SPOTIPPOS_BOUNDS){
-        
-        return {
-            getPropertiesInBounds : function(bounds) {
-                bounds = bounds || SPOTIPPOS_BOUNDS;
-                
-                return $http({
-                    method  : 'GET',
-                    url     : PROPERTIES_URL,
-                    params  : bounds
-                }).then(function(response){
-                    var properties = response.data.properties;
-                    
-                    //Normalize some attributes in the properties
-                    properties.map(function(property){
-                        
-                        //Converts the price to number, so it can be used in orderBy filter;
-                        property.price = Number(property.price);
-                        
-                        //Retrieves random pictures of homes from Flickr and appends it to the property
-                        property.picture = 'http://loremflickr.com/298/224/home,living,room/all/?' + property.id;
-                        return property;
-                    });
-                    
-                    properties.sort(function(a,b){ return a.price - b.price; });
-                    
-                    return $q.resolve(properties);
-                
-                }, function(error){
-                    return $q.reject(error.data);
-                });
-                
-            }
-        };
-        
-    }]);
+    .service('ResultsService', ['$q', 'ITEMS_PER_PAGE', 'matchCriteriaFilter',
+        function($q, ITEMS_PER_PAGE, matchCriteriaFilter) {
+
+            return {
+                offset: 0,
+                properties: [],
+                allProperties: [],
+                filteredProperties: [],
+                itemsPerPage: ITEMS_PER_PAGE,
+
+                filterProperties: function(filters) {
+                    this.properties = [];
+                    this.offset = 0;
+                    return $q.resolve(this.filteredProperties = matchCriteriaFilter(this.allProperties, filters));
+                },
+                nextPage: function() {
+                    var properties = this.filteredProperties.slice(this.offset, (this.offset + this.itemsPerPage));
+                    this.properties = this.properties.concat(properties);
+                    this.offset += properties.length;
+                }
+            };
+        }
+    ]);

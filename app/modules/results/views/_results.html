@@ -1,9 +1,9 @@
-                <section class="site-content_results" ng-controller="resultsController" >
-                    
+                <section class="site-content_results">
+
                     <section class="results_filter clearfix" property-filters></section>
-                    
-                    <section class="results_list clearfix" infinite-scroll='getResults()' infinite-scroll-disabled='properties.length >= filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
-                        <section class="results_property clearfix" ng-repeat="property in properties track by property.id " ng-if="properties.length">
+
+                    <section class="results_list clearfix" infinite-scroll='results.nextPage()' infinite-scroll-disabled='results.properties.length >= results.filteredProperties.length' infinite-scroll-distance="1" ng-cloak>
+                        <section class="results_property clearfix" ng-repeat="property in results.properties track by property.id " ng-if="results.properties.length">
                             <div class="property_photo">
                                 <img ng-src="{{ property.picture }}" />
                                 <span>{{ property.price | currency : 'R$ ' : 0 }}</span>
@@ -22,16 +22,16 @@
                                 </dd>
                             </dl>
                         </section>
-                        <div class="results_list_not-found" ng-show="!properties.length">
-                            <div ng-show="!filteredProperties" class="ng-animate-disabled blink">
+                        <div class="results_list_not-found" ng-show="!results.properties.length">
+                            <div ng-show="!results.filteredProperties.length" class="ng-animate-disabled blink">
                                 <svg><use xlink:href="assets/img/icons.svg#building" /></svg>
                                 <strong>Aguarde, localizando im&oacute;veis...</strong>
                             </div>
-                            <div ng-show="filteredProperties">
+                            <div ng-show="results.filteredProperties.length">
                                 <svg><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
                                 <strong>Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
                             </div>
                         </div>
                     </section>
-                
+
                 </section>
