@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spotippos', ['ngAnimate', 'ui.router', 'infinite-scroll',
+angular.module('spotippos', ['ngAnimate', 'ui.router', 'infinite-scroll', 'cfp.hotkeys',
     'spotippos.config', 'spotippos.controllers', 'spotippos.directives', 'spotippos.filters', 'spotippos.services',
     'spotippos.results', 'spotippos.propertyFilter', 'spotippos.propertyDetails'
 ]);
@@ -21,16 +21,15 @@ angular.module('spotippos.config', [])
     /* BUILD:ALL .constant('HTTP_CACHE_ENABLED', true); */
 
 angular.module('spotippos')
-    .config(['$httpProvider', 'HTTP_CACHE_ENABLED',
-        function($httpProvider, HTTP_CACHE_ENABLED) {
-            $httpProvider.defaults.cache = HTTP_CACHE_ENABLED;
-        }
-    ])
-    .config(['$animateProvider',
-        function($animateProvider) {
-            $animateProvider.classNameFilter(/^((?!(ng-animate-disabled)).)*$/);
-        }
-    ])
+    .config(['$httpProvider', 'HTTP_CACHE_ENABLED', function($httpProvider, HTTP_CACHE_ENABLED) {
+        $httpProvider.defaults.cache = HTTP_CACHE_ENABLED;
+    }])
+    .config(['$animateProvider', function($animateProvider) {
+        $animateProvider.classNameFilter(/^((?!(ng-animate-disabled)).)*$/);
+    }])
+    .config(['hotkeysProvider', function(hotkeysProvider) {
+        hotkeysProvider.includeCheatSheet = false;
+    }])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
             $stateProvider
@@ -54,6 +53,9 @@ angular.module('spotippos')
                     url: '/property/:id',
                     controller: 'PropertyDetailsController',
                     templateUrl: 'modules/property-details/views/_details.html',
+                    params: {
+                        index: { value: -1 }
+                    },
                     resolve: {
                         validPropertyId: ['$stateParams', '$q', function($stateParams, $q) {
                             return !isNaN(parseInt($stateParams.id, 10)) ? true :
