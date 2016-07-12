@@ -14,13 +14,14 @@ angular.module('spotippos.propertyDetails.controllers',[])
             hotkeys.bindTo($scope).add({
                 combo: navKey[0],
                 description: navKey[1],
-                callback: function(event, hotkey) { $scope.navigateTo(event, navKey[2]); }
+                callback: function(event, hotkey) {
+                    event.preventDefault();
+                    $scope.navigateTo(navKey[2]);
+                }
             });
         });
 
-        $scope.navigateTo = function(event, action) {
-            event.preventDefault();
-
+        $scope.navigateTo = function(action) {
             var currentIndex = $stateParams.index,
                 filteredProperties = ResultsService.filteredProperties,
                 propertyIndex;
@@ -35,7 +36,11 @@ angular.module('spotippos.propertyDetails.controllers',[])
                 var property = filteredProperties[propertyIndex];
                 $state.go('property.slug', { id: property.id, slug: $filter('slug')(property.title), index: propertyIndex });
             } else if(action=='results') {
-                $state.go('results'); //todo: keep filters
+                if(ResultsService.filters) {
+                    $state.go('results.filtered', ResultsService.filters);
+                } else {
+                    $state.go('results');
+                }
             }
 
         };
@@ -52,7 +57,7 @@ angular.module('spotippos.propertyDetails.controllers',[])
                 var posX = parseFloat(($scope.property.lat / SPOTIPPOS_BOUNDS.by) * 100).toFixed(2),
                     posY = parseFloat(($scope.property.long / SPOTIPPOS_BOUNDS.bx) * 100).toFixed(2);
 
-                $scope.location = { x: posX + '%', y: posY + '%'};
+                $scope.property.location = { x: posX + '%', y: posY + '%'};
             });
         }());
 

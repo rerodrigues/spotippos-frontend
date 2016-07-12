@@ -7,7 +7,7 @@
                                     <img ng-src="{{ property.picture }}" />
                                 </div>
                                 <h3>Localiza&ccedil;&atilde;o em Spotippos</h3>
-                                <property-map property-location="{{location}}"></property-map>
+                                <property-map property-location="{{ property.location }}"></property-map>
                             </div>
                             <dl class="property_details">
                                 <dt>ID {{ property.id }}</dt>
@@ -21,7 +21,7 @@
                                         <li class="beds">{{ property.beds }} Quartos</li>
                                         <li class="baths">{{ property.baths }} Banheiros</li>
                                     </ul>
-                                    <a ui-sref="results">Voltar</a>
+                                    <a href="" ng-click="navigateTo('results')">Voltar</a>
                                 </dd>
                             </dl>
                         </section>

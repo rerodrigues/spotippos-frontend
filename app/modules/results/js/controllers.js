@@ -6,7 +6,7 @@ angular.module('spotippos.results.controllers', [])
 
             $scope.results = ResultsService;
 
-            angular.extend($scope, {
+            angular.extend($scope.results, {
                 filters: compactObjFilter($state.params)
             });
 
@@ -18,17 +18,17 @@ angular.module('spotippos.results.controllers', [])
 
             $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
                 if (toState.name === 'results' || toState.name === 'results.filtered') {
-                    ResultsService.filterProperties(toParams).then(function() {
-                        ResultsService.nextPage();
+                    $scope.results.filterProperties(toParams).then(function() {
+                        $scope.results.nextPage();
                     });
                 }
             });
 
             (function() {
                 PropertyService.getPropertiesInBounds().then(function(data) {
-                    ResultsService.allProperties = data;
-                    ResultsService.filterProperties($scope.filters).then(function() {
-                        ResultsService.nextPage();
+                    $scope.results.allProperties = data;
+                    $scope.results.filterProperties($scope.results.filters).then(function() {
+                        $scope.results.nextPage();
                     });
                 });
             }());
