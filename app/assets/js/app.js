@@ -28,7 +28,9 @@ angular.module('spotippos')
         $animateProvider.classNameFilter(/^((?!(ng-animate-disabled)).)*$/);
     }])
     .config(['hotkeysProvider', function(hotkeysProvider) {
-        hotkeysProvider.includeCheatSheet = false;
+        hotkeysProvider.includeCheatSheet = true;
+        hotkeysProvider.templateTitle = 'Atalhos de teclado';
+        hotkeysProvider.cheatSheetDescription = 'Exibe / oculta esta tela de ajuda';
     }])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
