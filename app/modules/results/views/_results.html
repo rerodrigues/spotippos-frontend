@@ -18,16 +18,16 @@
                                         <li class="beds">{{ property.beds }} Quartos</li>
                                         <li class="baths">{{ property.baths }} Banheiros</li>
                                     </ul>
-                                    <a ui-sref="property.slug({ id: {{property.id}}, slug: '{{property.title | slug }}', index: {{$index}} })">Visualizar anúncio</a>
+                                    <a ui-sref="property.slug({ id: property.id, slug: (property.title | slug), index: $index })">Visualizar anúncio</a>
                                 </dd>
                             </dl>
                         </section>
                         <div class="results_list_not-found" ng-show="!results.properties.length">
-                            <div ng-show="!results.filteredProperties.length" class="ng-animate-disabled blink">
+                            <div ng-show="!results.allProperties.length" class="ng-animate-disabled blink">
                                 <svg><use xlink:href="assets/img/icons.svg#building" /></svg>
                                 <strong>Aguarde, localizando im&oacute;veis...</strong>
                             </div>
-                            <div ng-show="results.filteredProperties.length">
+                            <div ng-show="results.allProperties.length">
                                 <svg><use xlink:href="assets/img/icons.svg#no-buildings" /></svg>
                                 <strong>Nenhum im&oacute;vel encontrado com os filtros utilizados!</strong>
                             </div>
