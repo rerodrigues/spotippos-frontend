@@ -8,7 +8,7 @@ module.exports = function(grunt) {
             src: [
                 'app/**',
                 '!app/libs/**',
-                '!app/assets/{js,scss}/**',
+                '!app/assets/{js,css,scss}/**',
                 '!app/assets/img/{png,jpg,gif}/**',
                 '!app/modules/**/*.{js,css,scss}',
                 'app/assets/img/png/spotippos-map.png'
