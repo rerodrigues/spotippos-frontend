@@ -1,0 +1,11 @@
+<div class="navbuttons" ng-class="{ 'has-nav' : hasPrevious || hasNext }">
+    <a href="" ng-click="navigateTo({where:'results'})" title="Voltar à listagem de resultados (tecla u)">Voltar aos resultados</a>
+    <span class="prev-next" ng-if="hasPrevious || hasNext">
+        <a href="" ng-click="navigateTo({where:'previous'})" class="previous" ng-show="hasPrevious" title="Propriedade anterior (tecla k)">
+            <svg><use xlink:href="assets/img/icons.svg#chevron-left" /></svg>&nbsp;Anterior
+        </a>
+        <a href="" ng-click="navigateTo({where:'next'})" class="next" ng-show="hasNext" title="Próxima propriedade (tecla j)">Próxima&nbsp;
+            <svg><use xlink:href="assets/img/icons.svg#chevron-right" /></svg>
+        </a>
+    </span>
+</div>

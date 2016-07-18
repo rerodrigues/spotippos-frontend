@@ -12,4 +12,15 @@ angular.module('spotippos.propertyDetails.directives',[])
                 if(propertyLocation) { scope.location = propertyLocation; }
             }
         };
+    })
+    .directive('propertyNavigation', function() {
+        return {
+            restrict: 'AE',
+            scope: {
+                'hasNext' : "=",
+                'hasPrevious' : '=',
+                'navigateTo' : '&navAction'
+            },
+            templateUrl: 'modules/property-details/views/_navigation.html'
+        };
     });

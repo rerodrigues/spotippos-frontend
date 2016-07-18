@@ -9,21 +9,24 @@
                                 <h3>Localiza&ccedil;&atilde;o em Spotippos</h3>
                                 <property-map property-location="{{ property.location }}"></property-map>
                             </div>
-                            <dl class="property_details">
-                                <dt>ID {{ property.id }}</dt>
-                                <dd class="property_title">{{ property.title }}</dd>
-                                <dd class="property_description">{{ property.description }}</dd>
-                                <dd class="property_features clearfix">
-                                    <ul>
-                                        <li class="price">{{ property.price | currency : 'R$ ' : 0 }}</li>
-                                        <li class="priceM2">{{ property.price/property.squareMeters | currency : 'R$ ' }} / M&sup2;</li>
-                                        <li class="m2">{{ property.squareMeters }} M&sup2;</li>
-                                        <li class="beds">{{ property.beds }} Quartos</li>
-                                        <li class="baths">{{ property.baths }} Banheiros</li>
-                                    </ul>
-                                    <a href="" ng-click="navigateTo('results')">Voltar</a>
-                                </dd>
-                            </dl>
+                            <div class="property_details">
+                                <dl>
+                                    <dt>ID {{ property.id }}</dt>
+                                    <dd class="property_title">{{ property.title }}</dd>
+                                    <dd class="property_description">{{ property.description }}</dd>
+                                    <dd class="property_features clearfix">
+                                        <ul>
+                                            <li class="price">{{ property.price | currency : 'R$ ' : 0 }}</li>
+                                            <li class="priceM2">{{ property.price/property.squareMeters | currency : 'R$ ' }} / M&sup2;</li>
+                                            <li class="m2">{{ property.squareMeters }} M&sup2;</li>
+                                            <li class="beds">{{ property.beds }} Quartos</li>
+                                            <li class="baths">{{ property.baths }} Banheiros</li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+
+                                <property-navigation has-previous="hasPrevious" has-next="hasNext"  nav-action="navigateTo(where)"></property-navigation>
+                            </div>
                         </section>
                         <section class="property_not-found" ng-show="!property">
                             <div class="ng-animate-disabled blink">

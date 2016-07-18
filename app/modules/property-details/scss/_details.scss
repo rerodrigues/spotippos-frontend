@@ -5,14 +5,14 @@
     background-color: #FFFFFF;
     border-radius: 2px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-    
+
     .property_not-found {
         display: flex;
         min-height: 100%;
         align-items: center;
         color: #E6E6E6;
         fill: currentColor;
-        
+
         & > div {
             text-align: center;
             margin: 0 auto;
@@ -30,7 +30,7 @@
             margin-top: 30px;
         }
     }
-    
+
     .property {
         display: flex;
         position: relative;
@@ -39,51 +39,51 @@
         border-radius: 2px;
         background-color: #FFF;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
-        
+
         &.ng-enter {
             transition: 2s linear all;
             opacity: 0;
         }
         &.ng-enter.ng-enter-active { opacity: 1; }
-        
+
         .property_photos {
             width: 298px;
             flex: none;
-            
+
             .photo {
                 background: #DDD url(../img/svg/logo-vivareal.svg) no-repeat center 40px/50%;
                 color: $brownish-grey;
                 height: 228px;
             }
-            
+
             img {
                 max-width: 298px;
                 max-height: 228px;
                 display: block;
             }
-            
+
             .property-map {
                 position: relative;
                 & > img { opacity : 0.75; }
                 & > div {
                     position: absolute;
-                    
+
                     & > svg {
                         height: 26px;
                         width: 26px;
                         position: absolute;
                         transform: translate(-50%,-100%);
                         color: $water-blue;
-                        
+
                         &.shadow {
                             color: rgba(0,0,0, 0.25);
                             transform: skewX(-45deg) translate(-95%, -80%) scale(0.7);
                         }
                     }
-                
+
                 }
             }
-            
+
             h3 {
                 color: $greyish-brown;
                 font: 700 18px/1.5 'Roboto Condensed';
@@ -91,20 +91,22 @@
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
-            
+
         }
     }
-    
+
     .property_details {
         min-width: 390px;
-        padding-top: 8px;
+        margin-left: 17px;
         flex: 1;
-        
+        display: flex;
+        flex-direction: column;
+
+        dl { flex: 1; padding-top: 8px; }
         dt {
-            margin-left: 17px;
             font: 700 13px/1.2 'Roboto Condensed';
             color: #878787;
-            
+
             border-radius: 2px;
             background-color: #FFF;
             border: solid 1px #e5e5e5;
@@ -112,8 +114,6 @@
             padding: 0 6px;
         }
         dd {
-            margin: 0 17px;
-            
             &.property_title {
                 font: 700 24px/1.5 'Roboto Condensed';
                 color: $greyish-brown;
@@ -121,19 +121,15 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
             }
-            
+
             &.property_description {
                 font: 16px/1.6 'Roboto Condensed';
                 color: #878787;
                 margin-top: 4px;
                 margin-bottom: 20px;
             }
-            
+
             &.property_features {
-                margin: 0;
-                padding: 0 7px 0 17px;
-                
-                ul { float : left; }
                 li {
                     font: 700 18px 'Roboto Condensed';
                     color: #999999;
@@ -143,38 +139,46 @@
                     background-position: 0 center;
                     background-repeat: no-repeat;
                     padding: 10px 0 10px 45px;
-                    
+
                     &.price   { background-image: url(../img/svg/ic-coin-dollar.svg) }
                     &.priceM2 { background-image: url(../img/svg/ic-stats-dots.svg) }
                     &.m2      { background-image: url(../img/svg/ic-card-area.svg) }
                     &.beds    { background-image: url(../img/svg/ic-card-beds.svg) }
                     &.baths   { background-image: url(../img/svg/ic-card-bathroom.svg) }
                 }
-                a {
-                    position: absolute;
-                    right: 10px;
-                    bottom: 10px;
-                    padding: 9px;
-                    font: 700 14px/1.1 'Roboto Condensed';
-                    color: #FFF;
-                    text-transform: uppercase;
-                    border-radius: 2px;
-                    background-color: $azure;
-                    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
-                    cursor: pointer;
-                }
             }
         }
-        
+
+        .navbuttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+
+            a {
+                display: inline-block;
+                height: 36px;
+                padding: 0 9px;
+                font: 700 14px/36px 'Roboto Condensed';
+                color: #FFF;
+                text-transform: uppercase;
+                background-color: $azure;
+                border-radius: 2px;
+                box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.12);
+
+                svg { display: inline-block; width: 14px; height: 14px; }
+            }
+            .prev-next { margin-left: 20px; }
+        }
+
     }
-    
+
 }
-    
+
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
     .property-info {
         padding-left: 15px; padding-right: 15px; margin-right: 12px;
-        
+
         .property {
             .property_photos {
                 width: 278px;
@@ -184,11 +188,11 @@
         }
         .property_details {
             min-width: 340px;
-            
+
             dt { margin-left: 12px; }
             dd {
                 margin: 0 12px;
-                
+
                 &.property_features { padding-left: 12px; }
             }
         }
@@ -196,31 +200,36 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {  
+@media only screen and (max-width : 768px) {
     .property-info {
         margin: 0; margin-top: 8px;
+
+        .property_details .navbuttons {
+            &.has-nav { justify-content: space-between; }
+            .prev-next { margin-left: 0; }
+        }
     }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
     .property-info {
         padding: 11px;
-        
+
         .property_not-found {
             svg { width: 60px; height: 62px; }
             strong { font: 700 18px 'Roboto Condensed'; }
         }
-        
+
         .property {
             padding: 0;
             flex-flow: column;
-            
+
             .property_photos {
                 order : 2;
                 width: 100%;
                 padding: 7px;
-                
+
                 .photo {
                     width: 100%;
                     height: auto;
@@ -235,19 +244,42 @@
             .property_details {
                 order : 1;
                 min-width: auto;
-                
-                dt, dd { margin-left: 10px; margin-right: 10px; }
+                margin: 0 7px;
+
                 dd {
                     &.property_title { height: auto; }
-                    &.property_description { margin: 4px 10px 12px; }
+                    &.property_description { margin: 4px 0 12px; }
                     &.property_features {
-                        position: relative;
-                        padding: 0;
-                        
+                        position: relative; padding: 0;
+
                         li { font-size: 16px; }
-                        a { right: 0; }
                     }
                 }
+                .navbuttons { margin: 6px 0; }
+            }
+        }
+    }
+}
+
+/* Custom, galaxy S5 */
+@media only screen and (max-width : 375px) {
+    .property-info .property {
+        .property_details .navbuttons {
+            margin: 0; margin-top: 6px;
+
+            a {
+                padding: 0 4px;
+                font-size: 12px;
+                height: 48px;
+                line-height: 48px;
+
+                svg { width: 10px; height: 10px;}
+            }
+            & > a {
+                line-height: normal;
+                text-align: center;
+                width: 100px;
+                padding-top: 10px;
             }
         }
     }
