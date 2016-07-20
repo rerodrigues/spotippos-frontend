@@ -33,14 +33,6 @@ module.exports = function(grunt) {
                 'app/**/*.{scss,sass}'
             ]
         },
-        package : {
-            src: [
-                'Package.json',
-            ],
-            options: {
-                spaces: 2
-            }
-        },
         others: {
             src: [
                 '.gitignore',
