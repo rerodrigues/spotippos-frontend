@@ -9,6 +9,7 @@ module.exports = function(config) {
         basePath: '../',
 
         files: [
+            /* APP Libs */
             'app/libs/jquery/dist/jquery.js',
             'app/libs/angular/angular.js',
             'app/libs/angular-animate/angular-animate.js',
@@ -16,35 +17,55 @@ module.exports = function(config) {
             'app/libs/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'app/libs/angular-mocks/angular-mocks.js',
 
+            /* APP Scripts */
             'app/assets/js/**/*.js',
             'app/modules/**/*.js',
 
+            /* Unit test scripts */
             'test/unit/*.js',
-            'test/_mock-data/*.json'
+
+            /* JSON Fixtures */
+            'test/_mock-data/*.json',
+
+            /* External templates */
+            'app/modules/**/views/*.html'
         ],
 
+        debug: true,
+
+        colors: true,
+
+        autoWatch: true,
+
+        logLevel: config.LOG_INFO,
+
+        browsers: ['Chrome'],
+
+        frameworks: ['jasmine','fixture'],
+
+        reporters: ['progress','coverage','kjhtml','html', 'junit'],
+
+
         preprocessors: {
-            '**/*.json'   : ['json_fixtures']
+            '**/*.json': ['json_fixtures'],
+            'app/modules/**/*.html': ['ng-html2js'],
+            'app/{assets,modules}/**/*.js': ['coverage']
         },
 
         jsonFixturesPreprocessor: {
             variableName: '__json__'
         },
 
-        autoWatch: true,
+        ngHtml2JsPreprocessor: {
+            moduleName: "app.templates",
+            stripPrefix: 'app/'
+        },
 
-        frameworks: ['jasmine','fixture'],
-
-        browsers: ['Chrome'],
-
-        reporters: ['progress','kjhtml','html', 'junit'],
-
-        debug: true,
 
         htmlReporter: {
             outputDir: 'test/reports',
-            focusOnFailures: true,
             namedFiles: true,
+            focusOnFailures: true,
             urlFriendlyName: true,
             reportName: ['jasmine_test_results_', currentTime].join(''),
 
@@ -53,21 +74,31 @@ module.exports = function(config) {
         },
 
         junitReporter: {
-            outputDir: 'test/reports',
-            outputFile: ['junit_test_results_', currentTime, '.xml'].join(''),
             suite: 'unit',
-            useBrowserName: false
+            useBrowserName: false,
+            outputDir: 'test/reports',
+            outputFile: ['junit_test_results_', currentTime, '.xml'].join('')
+        },
+
+        coverageReporter: {
+            type: 'html',
+            dir: 'test/reports/coverage/',
+            subdir: currentTime
         },
 
         plugins: [
+            'karma-jasmine',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter',
+
             'karma-fixture',
             'karma-json-fixtures-preprocessor',
+            'karma-ng-html2js-preprocessor',
+
+            'karma-junit-reporter',
             'karma-jasmine-html-reporter',
-            'karma-html-reporter'
+            'karma-html-reporter',
+            'karma-coverage'
         ],
 
         phantomjsLauncher: {

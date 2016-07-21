@@ -6,7 +6,8 @@ module.exports = function(grunt) {
             'Gruntfile.js',
             'grunt/*.js',
             'app/**/*.js',
-            'test/*.js',
+            'test/unit/*.js',
+            'test/karma.conf.js',
             '!app/libs/**/*'
         ],
         options: {
