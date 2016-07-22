@@ -16,6 +16,8 @@ module.exports = function(config) {
             'app/libs/angular-ui-router/release/angular-ui-router.js',
             'app/libs/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'app/libs/angular-mocks/angular-mocks.js',
+            'app/libs/angular-hotkeys/build/hotkeys.js',
+            'app/libs/mousetrap/tests/libs/key-event.js',
 
             /* APP Scripts */
             'app/assets/js/**/*.js',
@@ -67,7 +69,7 @@ module.exports = function(config) {
             namedFiles: true,
             focusOnFailures: true,
             urlFriendlyName: true,
-            reportName: ['jasmine_test_results_', currentTime].join(''),
+            reportName: [currentTime, 'jasmine_test_results'].join('_'),
 
             preserveDescribeNesting: true,
             foldAll: false
@@ -77,7 +79,7 @@ module.exports = function(config) {
             suite: 'unit',
             useBrowserName: false,
             outputDir: 'test/reports',
-            outputFile: ['junit_test_results_', currentTime, '.xml'].join('')
+            outputFile: [currentTime, 'junit_test_results.xml'].join('_')
         },
 
         coverageReporter: {
@@ -99,11 +101,7 @@ module.exports = function(config) {
             'karma-jasmine-html-reporter',
             'karma-html-reporter',
             'karma-coverage'
-        ],
-
-        phantomjsLauncher: {
-            exitOnResourceError: true
-        }
+        ]
 
     });
 };

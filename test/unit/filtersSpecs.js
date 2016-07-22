@@ -17,7 +17,7 @@ describe('[spotippos.filters]', function() {
             string2 = '1.000.000',
             string3 = '1,0..¥0£0..0,0';
 
-        it('Should convert a currency formatted string to a Number object', inject(function(currencyToIntegerFilter) {
+        it('should convert a currency formatted string to a Number object', inject(function(currencyToIntegerFilter) {
 
             expect(typeof currencyToIntegerFilter(string1)).toBe("number");
             expect(typeof currencyToIntegerFilter(string2)).toBe("number");
@@ -28,12 +28,12 @@ describe('[spotippos.filters]', function() {
 
     describe('compactObj', function() {
 
-        it('Should remove all the undefined and null values from an object', inject(function(compactObjFilter) {
+        it('should remove all the undefined and null values from an object', inject(function(compactObjFilter) {
             var resultObj = compactObjFilter(testObj);
 
             expect(Object.keys(resultObj).length).toBe(8);
-            expect(typeof resultObj.k1).toBe("undefined");
-            expect(typeof resultObj.k2).toBe("undefined");
+            expect(resultObj.k1).toBeUndefined();
+            expect(resultObj.k2).toBeUndefined();
             expect(resultObj.k8[0]).toBe(1);
             expect(resultObj.k9.a).toBe(1);
             expect(resultObj.k10()).toBeTruthy();
@@ -43,12 +43,12 @@ describe('[spotippos.filters]', function() {
 
     describe('omitNull', function() {
 
-        it('Should remove all null values from an object', inject(function(omitNullFilter) {
+        it('should remove all null values from an object', inject(function(omitNullFilter) {
             var resultObj = omitNullFilter(testObj);
 
             expect(Object.keys(resultObj).length).toBe(10);
-            expect(typeof resultObj.k1).toBe("undefined");
-            expect(typeof resultObj.k2).toBe("undefined");
+            expect(resultObj.k1).toBeUndefined();
+            expect(resultObj.k2).toBeUndefined();
             expect(resultObj.k8[0]).toBe(1);
             expect(resultObj.k9.a).toBe(1);
             expect(resultObj.k10()).toBeTruthy();
@@ -58,13 +58,26 @@ describe('[spotippos.filters]', function() {
 
     describe('slug', function() {
 
-        it('Should remove all non alphanumeric character from a string and replace spaces by _', inject(function(slugFilter) {
+        it('should remove all non alphanumeric character from a string and replace spaces by _', inject(function(slugFilter) {
 
             var inputStr = "Imóvel código 1154, com 3 quartos e 2 banheiros.@!#$%*''`",
                 resultStr = slugFilter(inputStr);
 
-            expect(typeof resultStr).not.toBe("undefined");
+            expect(typeof resultStr).toBeDefined();
             expect(/[^0-9a-zA-Z_\s]/g.test(resultStr)).toBeFalsy();
+        }));
+
+    });
+
+    describe('slug', function() {
+
+        it('should call slug filter without any parameter and return a empty string', inject(function(slugFilter) {
+
+            var inputStr,
+                resultStr = slugFilter(inputStr);
+
+            expect(typeof resultStr).toBe("string");
+            expect(resultStr.length).toBe(0);
         }));
 
     });
@@ -84,7 +97,7 @@ describe('[spotippos.results.filters]', function() {
             propertiesFixture = fixture.load(PROPERTIES_URL.replace(/^\//,''));
         }));
 
-        it('Should return only one property which matches all criteria', inject(function(matchCriteriaFilter) {
+        it('should return only one property which matches all criteria', inject(function(matchCriteriaFilter) {
             var criteria = { id : 1825, squareMeters: 50, beds: 2, baths: 1, minPrice: 537000, maxPrice: 537000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -99,7 +112,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only one property with an id of 2546', inject(function(matchCriteriaFilter) {
+        it('should return only one property with an id of 2546', inject(function(matchCriteriaFilter) {
             var criteria = { id: 2546 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -108,7 +121,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only properties with 62 square meters', inject(function(matchCriteriaFilter) {
+        it('should return only properties with 62 square meters', inject(function(matchCriteriaFilter) {
             var criteria = { squareMeters: 62 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -117,7 +130,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only properties with 3 beds', inject(function(matchCriteriaFilter) {
+        it('should return only properties with 3 beds', inject(function(matchCriteriaFilter) {
             var criteria = { beds: 3 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -127,7 +140,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only properties with a minimum price of 1500000', inject(function(matchCriteriaFilter) {
+        it('should return only properties with a minimum price of 1500000', inject(function(matchCriteriaFilter) {
             var criteria = { minPrice : 1500000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -137,7 +150,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only properties with a maximum price of 700000', inject(function(matchCriteriaFilter) {
+        it('should return only properties with a maximum price of 700000', inject(function(matchCriteriaFilter) {
             var criteria = { maxPrice : 700000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -147,7 +160,7 @@ describe('[spotippos.results.filters]', function() {
 
         }));
 
-        it('Should return only properties with the exact price of 607000', inject(function(matchCriteriaFilter) {
+        it('should return only properties with the exact price of 607000', inject(function(matchCriteriaFilter) {
             var criteria = { minPrice: 607000, maxPrice: 607000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
@@ -155,6 +168,12 @@ describe('[spotippos.results.filters]', function() {
             expect(filtered[0]['id']).toBe("2546");
             expect(filtered[0]['price']).toBe("607000");
 
+        }));
+
+        it('should return all properties (without filters)', inject(function(matchCriteriaFilter) {
+            var filtered = matchCriteriaFilter(propertiesFixture.properties);
+
+            expect(filtered.length).toBe(propertiesFixture.properties.length);
         }));
 
     });

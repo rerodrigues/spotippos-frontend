@@ -4,11 +4,11 @@
   "browser": true,
   "devel": true,
   "sub": true,
-  
+
   "globals": {
     // Node
     "require": false,
-    
+
     // Angular
     "angular": false,
 
@@ -19,19 +19,25 @@
     // Jasmine
     "jasmine": false,
     "describe": false,
+    "fdescribe": false,
+    "xdescribe": false,
     "beforeEach": false,
+    "beforeAll": false,
     "afterEach": false,
+    "afterAll": false,
     "it": false,
+    "fit": false,
+    "xit": false,
     "expect": false,
+    "fixture" : false,
+    "spyOn" : false,
 
     // Protractor
     "browser": false,
     "element": false,
     "by": false,
-    
-    // Karma/Jasmine
-    "fixture" : false,
-    "spyOn" : false
-	
+
+    // Hotkeys/Mousetrap
+    "KeyEvent": false
   }
 }

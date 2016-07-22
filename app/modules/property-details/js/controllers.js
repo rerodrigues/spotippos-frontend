@@ -49,6 +49,7 @@ angular.module('spotippos.propertyDetails.controllers',[])
         });
 
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+            /* istanbul ignore else */
             if(error.noPropertyId) {
                 $state.go("results");
             }

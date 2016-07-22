@@ -1,7 +1,7 @@
 # Spotippos Anúncios
 > Aplicativo web que te ajuda a encontrar o imóvel dos seus sonhos em Spotippos.
 
-*Spotippos Anúncios* lista dinamicamente todos os anúncios de imóveis de Spotippos. Com filtros que o ajudarão a encontrar o imóvel dos seus sonhos em Spotippos. 
+*Spotippos Anúncios* lista dinamicamente todos os anúncios de imóveis de Spotippos. Com filtros que o ajudarão a encontrar o imóvel dos seus sonhos em Spotippos.
 
 Você poderá utilizá-lo quando estiver em casa, no seu computador pessoal, ou na rua, em seu dispositivo móvel.
 
@@ -33,7 +33,7 @@ Sempre que precisar utilizar novamente roda apenas `npm run server` e abra http:
 
 ## Opções para desenvolvedores
 
-Os arquivos fonte do projeto estão localizados na pasta *./app* estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080. 
+Os arquivos fonte do projeto estão localizados na pasta *./app* estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080.
 
 Os testes automatizados por padrão rodam no PhantomJS, mas existe a opção de rodá-los também no Google Chrome.
 
@@ -58,7 +58,7 @@ Arquivos ficam localizados em *./test* e os relatórios gerados em *./test/repor
 
 Google Chrome (padrão) - Clique em `[ DEBUG ]` para ver os resultados
 ```sh
-npm run test
+npm test
 ```
 PhantomJS
 ```sh
@@ -106,7 +106,7 @@ npm run server
 * ~~1.1.0~~
     * ~~Tela de detalhe de imóveis~~
     * ~~Mapa da localização do imóvel em Spotippos na tela de detalhe~~
-* ~~1.0.0~~ 
+* ~~1.0.0~~
     * ~~Versão inicial~~
 
 ## Contato
