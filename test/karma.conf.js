@@ -18,6 +18,7 @@ module.exports = function(config) {
             'app/libs/angular-mocks/angular-mocks.js',
             'app/libs/angular-hotkeys/build/hotkeys.js',
             'app/libs/mousetrap/tests/libs/key-event.js',
+            'app/libs/angular-scroll/angular-scroll.js',
 
             /* APP Scripts */
             'app/assets/js/**/*.js',

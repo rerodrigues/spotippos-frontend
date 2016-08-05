@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         },
         html: {
             src: [
-                'app/**/*.{html,xml}'
+                'app/{assets,modules}/*.{html,xml}'
             ],
             options: {
                 ignores: ['html-comments']

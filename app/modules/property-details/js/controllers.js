@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spotippos.propertyDetails.controllers',[])
-    .controller('PropertyDetailsController',['$scope', '$rootScope', '$state', '$stateParams', '$filter', 'hotkeys', 'propertyDetailsService', 'ResultsService', 'SPOTIPPOS_BOUNDS',
-        function($scope, $rootScope, $state, $stateParams, $filter, hotkeys, propertyDetailsService, ResultsService, SPOTIPPOS_BOUNDS) {
+    .controller('PropertyDetailsController',['$scope', '$rootScope', '$state', '$stateParams', '$filter', '$document', 'hotkeys', 'propertyDetailsService', 'ResultsService', 'SPOTIPPOS_BOUNDS',
+        function($scope, $rootScope, $state, $stateParams, $filter, $document, hotkeys, propertyDetailsService, ResultsService, SPOTIPPOS_BOUNDS) {
 
         var currentIndex = $stateParams.index,
             filteredProperties = ResultsService.filteredProperties;
@@ -19,8 +19,13 @@ angular.module('spotippos.propertyDetails.controllers',[])
             }
 
             if(propertyIndex !== undefined) {
-                var property = filteredProperties[propertyIndex];
-                $state.go('property.slug', { id: property.id, slug: $filter('slug')(property.title), index: propertyIndex });
+                var property = filteredProperties[propertyIndex],
+                    containerElement = angular.element('body'),
+                    easeInQuad = function (t) { return t*t; };
+
+                $document.scrollToElement(containerElement, 0, 300, easeInQuad).then(function() {
+                    $state.go('property.slug', { id: property.id, slug: $filter('slug')(property.title), index: propertyIndex });
+                });
             } else if(action=='results') {
                 if(ResultsService.filters) {
                     $state.go('results.filtered', ResultsService.filters);
