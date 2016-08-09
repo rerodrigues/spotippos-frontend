@@ -15,23 +15,25 @@ module.exports = function(config) {
             'app/libs/angular-animate/angular-animate.js',
             'app/libs/angular-ui-router/release/angular-ui-router.js',
             'app/libs/ngInfiniteScroll/build/ng-infinite-scroll.js',
-            'app/libs/angular-mocks/angular-mocks.js',
             'app/libs/angular-hotkeys/build/hotkeys.js',
-            'app/libs/mousetrap/tests/libs/key-event.js',
             'app/libs/angular-scroll/angular-scroll.js',
 
             /* APP Scripts */
             'app/assets/js/**/*.js',
             'app/modules/**/*.js',
 
+            /* APP external templates */
+            'app/modules/**/views/*.html',
+
+            /* Unit test Libs */
+            'app/libs/angular-mocks/angular-mocks.js',
+            'app/libs/mousetrap/tests/libs/key-event.js',
+
             /* Unit test scripts */
             'test/unit/*.js',
 
-            /* JSON Fixtures */
-            'test/_mock-data/*.json',
-
-            /* External templates */
-            'app/modules/**/views/*.html'
+            /* Unit test JSON Fixtures */
+            'test/_mock-data/*.json'
         ],
 
         debug: true,
