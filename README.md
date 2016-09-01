@@ -21,7 +21,7 @@ Após a instalação de ambos, abra um prompt de comando (`cmd` no windows) e di
 git clone https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git
 cd vivareal-spotippos
 npm install
-npm run server
+npm start
 ```
 
 ## Uso
@@ -29,13 +29,26 @@ Após a instalação, abra o endereço http://localhost:8000 em seu navegador.
 
 Além da listagem inicial, você poderá utilizar os 6 critérios disponíveis na barra lateral para refinar ainda mais a busca pelo seu imóvel ideal em Spotippos.
 
-Sempre que precisar utilizar novamente roda apenas `npm run server` e abra http://localhost:8000 no navegador.
+Sempre que precisar utilizar novamente roda apenas `npm start` e abra http://localhost:8000 no navegador.
+
+## Navegação por teclas
+A tela de detalhes de imóveis possui o recurso de navegação por teclas quando é aberta à partir de uma lista de resultados.
+
+Para navegar entre os imóveis utilize:
+
+| Teclas           | Ação                      |
+|------------------|---------------------------|
+| j, Seta Direita  | Próximo imóvel            |
+| k, Seta Esquerda | Imóvel anterior           |
+| u, backspace     | Volta aos resultados      |
+| ?                | Abre a listagem de teclas |
+
 
 ## Opções para desenvolvedores
 
 Os arquivos fonte do projeto estão localizados na pasta *./app* estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080.
 
-Os testes automatizados por padrão rodam no PhantomJS, mas existe a opção de rodá-los também no Google Chrome.
+Os testes automatizados por padrão rodam no Google Chrome, mas existe a opção de rodá-los também no PhantomJS.
 
 
 
@@ -45,7 +58,7 @@ Os testes automatizados por padrão rodam no PhantomJS, mas existe a opção de 
 git clone https://bitbucket.org/renato_rodrigues/vivareal-spotippos.git
 cd vivareal-spotippos
 npm install
-npm run server-dev
+npm run server
 ```
 e para gerar os assets automaticamente, em outra janela digite
 
@@ -79,30 +92,44 @@ grunt build
 ##### Servidores locais
 Pasta *./app* com artefatos de desenvolvimento (porta 8080)
 ```sh
-npm run server-dev
+npm run server
 ```
 
-Pasta *./dist* com artefatos de produção (porta 8000)
+Pasta *./dist/app* com artefatos de produção (porta 8000)
 ```sh
-npm run server
+npm start
 ```
 
 ## Histórico de lançamentos
 
+* 1.2.0 _[09/08/2016]_
+    * Botões de navegação na tela de detalhes do anúncio
+    * Navegação entre imóveis com o teclado (j/k/u)
+    * Utilização do bower para gerenciar dependências
+    * Testes unitários em todos os controllers, services, filters e directives
+    * Relatório de cobertura de testes unitários
+    * Refactorings, melhorias estruturais e de Layout
+    * [changelog completo](CHANGELOG)
 * 1.1.0 _[09/06/2016]_
     * Tela de detalhe de imóveis
     * Mapa da localização do imóvel em Spotippos na tela de detalhe
+    * Relátorios de testes em formato Jasmine e JUNIT
 * 1.0.0 _[07/06/2016]_
     * Versão inicial
 
 ## Roadmap
+* 3.0.0
+    * Criação do próprio backend usando Node/Express/MongoDB
+
 * 2.0.0
     * Layout mobile first
-    * Calcular e exibir a província através da latitude e longitude
-    * Deploy automático para o S3/FTP
-    * Testes end-to-end
-* 1.2.0
-    * Filtro por províncias na barra lateral
+    * Ordenação dos resultados
+    * Filtro por províncias na barra lateral    
+    * Tela de adição de imóvel
+    * Calcular e exibir a província através da latitude e longitude usando R-Tree
+    * Deploy automático para o S3/Heroku/FTP
+    * Testes end-to-end com protractor
+
 * ~~1.1.0~~
     * ~~Tela de detalhe de imóveis~~
     * ~~Mapa da localização do imóvel em Spotippos na tela de detalhe~~

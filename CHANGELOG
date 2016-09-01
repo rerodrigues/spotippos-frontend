@@ -1,0 +1,22 @@
+1.2.0 [09/08/2016]
+    - Botões de navegação na tela de detalhes do anúncio
+    - Navegação entre imóveis com utilizando teclado (
+        - j/right - próximo
+        - k/left - anterior
+        - u/backspace - voltar aos resultados
+    - Ao voltar aos resultados os fitros são mantidos
+    - Utilização do bower para gerenciar dependências
+    - Testes unitários em todos os controllers, services, filters e directives
+    - Refactorings, melhorias estruturais e de Layout
+    - Grunt: notify, cssmin e combine-mq
+    - Controllers/serviços TDD friendly
+    - Barra estilizada no navegador mobile
+
+1.1.0 [09/06/2016]
+    - Tela de detalhe de imóveis
+    - Mapa da localização do imóvel em Spotippos na tela de detalhe
+    - Relatórios nos formatos JASMINE e JUNIT nos testes unitários
+    - Normalização de espaçõs/tabs nas indentações + grunt-lintspaces
+
+1.0.0 [07/06/2016]
+    - Versão inicial
