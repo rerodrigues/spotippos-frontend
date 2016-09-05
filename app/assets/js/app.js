@@ -12,7 +12,7 @@ angular.module('spotippos.config', [])
 
     /* BUILD:LOCAL */.constant('ITEMS_PER_PAGE', 4)
     /* BUILD:LOCAL */.constant('PROPERTIES_URL', '/test/_mock-data/properties.json')
-    /* BUILD:LOCAL */.constant('PROPERTY_DETAILS_URL', '/test/_mock-data/property.json?')
+    /* BUILD:LOCAL */.constant('PROPERTY_DETAILS_URL', '/test/_mock-data/properties/')
     /* BUILD:LOCAL */.constant('HTTP_CACHE_ENABLED', false);
 
     /* BUILD:ALL .constant('ITEMS_PER_PAGE', 6) */
