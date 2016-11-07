@@ -33,7 +33,8 @@ module.exports = function(config) {
             'test/unit/*.js',
 
             /* Unit test JSON Fixtures */
-            'test/_mock-data/*.json'
+            'test/_mock-data/*.json',
+            'test/_mock-data/properties/1'
         ],
 
         debug: true,
@@ -52,7 +53,8 @@ module.exports = function(config) {
 
 
         preprocessors: {
-            '**/*.json': ['json_fixtures'],
+            'test/_mock-data/*.json': ['json_fixtures'],
+            'test/_mock-data/properties/1': ['json_fixtures'],
             'app/modules/**/*.html': ['ng-html2js'],
             'app/{assets,modules}/**/*.js': ['coverage']
         },

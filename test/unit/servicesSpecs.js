@@ -28,7 +28,7 @@ describe('[spotippos.propertyFilter.services]', function() {
             $httpBackend.flush();
 
             expect(propertiesObj).toBeDefined();
-            expect(propertiesObj.length).toBe(21);
+            expect(propertiesObj.length).toBe(5722);
             expect(propertiesObj[0].id).toBeDefined();
             expect(propertiesObj[0].picture).toBeDefined();
             expect(typeof propertiesObj[0].price).toBe("number");
@@ -67,7 +67,7 @@ describe('[spotippos.propertyDetails.services]', function() {
             property = undefined;
 
             fixture.setBase('/');
-            propertyFixture = fixture.load(PROPERTY_DETAILS_URL.replace(/^\//,'').replace(/\?$/,''));
+            propertyFixture = fixture.load(PROPERTY_DETAILS_URL.replace(/^\/+/,'') + '1.json');
         }));
 
         it('should return the property with the given id', inject(function(propertyDetailsService, PROPERTY_DETAILS_URL) {

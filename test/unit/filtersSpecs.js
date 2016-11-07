@@ -125,7 +125,7 @@ describe('[spotippos.results.filters]', function() {
             var criteria = { squareMeters: 62 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
-            expect(filtered.length).toBe(1);
+            expect(filtered.length).toBe(38);
             expect(filtered[0]['squareMeters']).toBe("62");
 
         }));
@@ -134,7 +134,7 @@ describe('[spotippos.results.filters]', function() {
             var criteria = { beds: 3 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
-            expect(filtered.length).toBe(4);
+            expect(filtered.length).toBe(630);
             expect(filtered[0]['beds']).toBe("3");
             expect(filtered[filtered.length-1]['beds']).toBe("3");
 
@@ -144,7 +144,7 @@ describe('[spotippos.results.filters]', function() {
             var criteria = { minPrice : 1500000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
-            expect(filtered.length).toBe(3);
+            expect(filtered.length).toBe(1814);
             expect(Number(filtered[0]['price'])).toBeGreaterThan(1500000);
             expect(Number(filtered[filtered.length-1]['price'])).toBeGreaterThan(1500000);
 
@@ -154,7 +154,7 @@ describe('[spotippos.results.filters]', function() {
             var criteria = { maxPrice : 700000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
-            expect(filtered.length).toBe(4);
+            expect(filtered.length).toBe(1134);
             expect(Number(filtered[0]['price'])).toBeLessThan(700000);
             expect(Number(filtered[filtered.length-1]['price'])).toBeLessThan(700000);
 
@@ -164,7 +164,7 @@ describe('[spotippos.results.filters]', function() {
             var criteria = { minPrice: 607000, maxPrice: 607000 },
                 filtered = matchCriteriaFilter(propertiesFixture.properties, criteria);
 
-            expect(filtered.length).toBe(1);
+            expect(filtered.length).toBe(2);
             expect(filtered[0]['id']).toBe("2546");
             expect(filtered[0]['price']).toBe("607000");
 

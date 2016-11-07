@@ -185,7 +185,7 @@ describe('[spotippos.propertyDetails.controllers]', function() {
 
             fixture.setBase('/');
 
-            propertyFixture = fixture.load(PROPERTY_DETAILS_URL.replace(/^\//,'').replace(/\?$/,''));
+            propertyFixture = fixture.load(PROPERTY_DETAILS_URL.replace(/^\/+/,'') + '1.json');
             $httpBackend.expectGET(new RegExp('^' + PROPERTY_DETAILS_URL)).respond(propertyFixture);
         }));
 
