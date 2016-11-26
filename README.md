@@ -1,7 +1,7 @@
 # Spotippos Anúncios
 > Aplicativo web que te ajuda a encontrar o imóvel dos seus sonhos em Spotippos.
 
-*Spotippos Anúncios* lista dinamicamente todos os anúncios de imóveis de Spotippos. Com filtros que o ajudarão a encontrar o imóvel dos seus sonhos em Spotippos.
+_Spotippos Anúncios_ lista dinamicamente todos os anúncios de imóveis de Spotippos. Com filtros que o ajudarão a encontrar o imóvel dos seus sonhos em Spotippos.
 
 Você poderá utilizá-lo quando estiver em casa, no seu computador pessoal, ou na rua, em seu dispositivo móvel.
 
@@ -25,11 +25,11 @@ npm start
 ```
 
 ## Uso
-Após a instalação, abra o endereço http://localhost:8000 em seu navegador.
+Após a instalação, abra o endereço <http://localhost:8000> em seu navegador.
 
 Além da listagem inicial, você poderá utilizar os 6 critérios disponíveis na barra lateral para refinar ainda mais a busca pelo seu imóvel ideal em Spotippos.
 
-Sempre que precisar utilizar novamente roda apenas `npm start` e abra http://localhost:8000 no navegador.
+Sempre que precisar utilizar novamente roda apenas `npm start` e abra <http://localhost:8000> no navegador.
 
 ## Navegação por teclas
 A tela de detalhes de imóveis possui o recurso de navegação por teclas quando é aberta à partir de uma lista de resultados.
@@ -46,7 +46,7 @@ Para navegar entre os imóveis utilize:
 
 ## Opções para desenvolvedores
 
-Os arquivos fonte do projeto estão localizados na pasta *./app* estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080.
+Os arquivos fonte do projeto estão localizados na pasta _./app_ estão organizados em uma estrutura que permite visualizar o resultado do desenvolvimento sem a necessidade de gerar um build a cada atualização. Para isto o `grunt` está configurado para gerar os assets na mesma pasta onde o servidor de DEV serve na porta 8080.
 
 Os testes automatizados por padrão rodam no Google Chrome, mas existe a opção de rodá-los também no PhantomJS.
 
@@ -67,7 +67,7 @@ grunt watch
 ```
 
 ##### Testes automatizados
-Arquivos ficam localizados em *./test* e os relatórios gerados em *./test/reports*
+Arquivos ficam localizados em _./test_ e os relatórios gerados em _./test/reports_
 
 Google Chrome (padrão) - Clique em `[ DEBUG ]` para ver os resultados
 ```sh
@@ -83,58 +83,58 @@ npm run test-single-run
 ```
 
 ##### Build
-Assets de produção são gerados em *./dist*
+Assets de produção são gerados em _./dist_
 
 ```sh
 grunt build
 ```
 
 ##### Servidores locais
-Pasta *./app* com artefatos de desenvolvimento (porta 8080)
+Pasta _./app_ com artefatos de desenvolvimento (porta 8080)
 ```sh
 npm run server
 ```
 
-Pasta *./dist/app* com artefatos de produção (porta 8000)
+Pasta _./dist/app_ com artefatos de produção (porta 8000)
 ```sh
 npm start
 ```
 
 ## Histórico de lançamentos
 
-* 1.2.0 _[09/08/2016]_
-    * Botões de navegação na tela de detalhes do anúncio
-    * Navegação entre imóveis com o teclado (j/k/u)
-    * Utilização do bower para gerenciar dependências
-    * Testes unitários em todos os controllers, services, filters e directives
-    * Relatório de cobertura de testes unitários
-    * Refactorings, melhorias estruturais e de Layout
-    * [changelog completo](CHANGELOG)
-* 1.1.0 _[09/06/2016]_
-    * Tela de detalhe de imóveis
-    * Mapa da localização do imóvel em Spotippos na tela de detalhe
-    * Relátorios de testes em formato Jasmine e JUNIT
-* 1.0.0 _[07/06/2016]_
-    * Versão inicial
+*   1.2.0 _\[09/08/2016\]_
+    *   Botões de navegação na tela de detalhes do anúncio
+    *   Navegação entre imóveis com o teclado (j/k/u)
+    *   Utilização do bower para gerenciar dependências
+    *   Testes unitários em todos os controllers, services, filters e directives
+    *   Relatório de cobertura de testes unitários
+    *   Refactorings, melhorias estruturais e de Layout
+    *   [changelog completo](CHANGELOG)
+*   1.1.0 _\[09/06/2016\]_
+    *   Tela de detalhe de imóveis
+    *   Mapa da localização do imóvel em Spotippos na tela de detalhe
+    *   Relátorios de testes em formato Jasmine e JUNIT
+*   1.0.0 _\[07/06/2016\]_
+    *   Versão inicial
 
 ## Roadmap
-* 3.0.0
-    * Criação do próprio backend usando Node/Express/MongoDB
+*   3.0.0
+    *   Criação do próprio backend usando Node/Express/MongoDB
 
-* 2.0.0
-    * Layout mobile first
-    * Ordenação dos resultados
-    * Filtro por províncias na barra lateral    
-    * Tela de adição de imóvel
-    * Calcular e exibir a província através da latitude e longitude usando R-Tree
-    * Deploy automático para o S3/Heroku/FTP
-    * Testes end-to-end com protractor
+*   2.0.0
+    *   Layout mobile first
+    *   Ordenação dos resultados
+    *   Filtro por províncias na barra lateral    
+    *   Tela de adição de imóvel
+    *   Calcular e exibir a província através da latitude e longitude usando R-Tree
+    *   Deploy automático para o S3/Heroku/FTP
+    *   Testes end-to-end com protractor
 
-* ~~1.1.0~~
-    * ~~Tela de detalhe de imóveis~~
-    * ~~Mapa da localização do imóvel em Spotippos na tela de detalhe~~
-* ~~1.0.0~~
-    * ~~Versão inicial~~
+*   ~~1.1.0~~
+    *   ~~Tela de detalhe de imóveis~~
+    *   ~~Mapa da localização do imóvel em Spotippos na tela de detalhe~~
+*   ~~1.0.0~~
+    *   ~~Versão inicial~~
 
 ## Contato
 
